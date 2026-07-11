@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>算法基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我操了，怎么这么多 STL容器–标准模板库（算法，容器，仿函数，迭代器）1.0 向量vector1.1 构造vector&lt;数据类型&gt;vec; 1234567891011#include&lt;iostream&gt;#include&lt;vector&gt;using namespace std;typedef long long ll;int main()&#123;    vec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法基础">
+<meta property="og:url" content="http://example.com/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我操了，怎么这么多 STL容器–标准模板库（算法，容器，仿函数，迭代器）1.0 向量vector1.1 构造vector&lt;数据类型&gt;vec; 1234567891011#include&lt;iostream&gt;#include&lt;vector&gt;using namespace std;typedef long long ll;int main()&#123;    vec">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-12T11:12:57.000Z">
+<meta property="article:modified_time" content="2026-05-13T07:44:21.222Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-算法基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T11:12:57.000Z" itemprop="datePublished">2026-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      算法基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我操了，怎么这么多</p>
+<h1 id="STL容器–标准模板库（算法，容器，仿函数，迭代器）"><a href="#STL容器–标准模板库（算法，容器，仿函数，迭代器）" class="headerlink" title="STL容器–标准模板库（算法，容器，仿函数，迭代器）"></a>STL容器–标准模板库（算法，容器，仿函数，迭代器）</h1><h2 id="1-0-向量vector"><a href="#1-0-向量vector" class="headerlink" title="1.0 向量vector"></a>1.0 向量vector</h2><h3 id="1-1-构造"><a href="#1-1-构造" class="headerlink" title="1.1 构造"></a>1.1 构造</h3><p>vector&lt;数据类型&gt;vec;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">    vector&lt;<span class="type">double</span>&gt;vec2;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(<span class="number">5</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">6</span>,<span class="number">10</span>)); <span class="comment">//初始化一个5行6列的二维数组，初始值为10</span></span><br><span class="line">    vector&lt;vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&gt;<span class="built_in">dp1</span>(<span class="number">5</span>,vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;(<span class="number">6</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">7</span>,<span class="number">10</span>))); <span class="comment">//初始化一个5行6列7层的三维数组，初始值为10</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec3[<span class="number">100</span>]; <span class="comment">//定义一个长度为100的vector数组，每个元素都是一个vector&lt;int&gt;   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-尾接-尾删"><a href="#1-2-尾接-尾删" class="headerlink" title="1.2 尾接&amp;&amp;尾删"></a>1.2 尾接&amp;&amp;尾删</h3><p>尾部增加一个大小为m的数值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">push_back</span>(m);</span><br></pre></td></tr></table></figure>
+<p>在尾部删去一个数值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.pop_back();</span><br></pre></td></tr></table></figure>
+<p>将整个数组删除</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">clean</span>();</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">增长数组</th>
+<th align="center">缩短数组</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">arr.resize(m)</td>
+<td align="center">增长到m(增加的数默认为0)</td>
+<td align="center">缩短到m(删去末尾数组)</td>
+</tr>
+<tr>
+<td align="center">数组长度（int类型）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">size</span>()</span><br></pre></td></tr></table></figure>
+<p>数组是否为空(bool类型)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">empty</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; arr;</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :arr)</span><br><span class="line">        cout&lt;&lt;ele&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;arr.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">pop_back</span>();</span><br><span class="line">    arr.<span class="built_in">pop_back</span>();</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :arr)</span><br><span class="line">        cout&lt;&lt;ele&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">clear</span>();</span><br><span class="line">    cout&lt;&lt;arr.<span class="built_in">size</span>()&lt;&lt;arr.<span class="built_in">empty</span>()<span class="comment">/*bool*/</span>&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">5</span>);<span class="comment">//将长度增长到5，新增元素默认值为0</span></span><br><span class="line">    arr.<span class="built_in">clear</span>();</span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">5</span>,<span class="number">1</span>);<span class="comment">//将长度增长到5，新增元素默认值为1</span></span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">3</span>);<span class="comment">//将长度缩小到3，后面元素被删除</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-适用情况"><a href="#1-3-适用情况" class="headerlink" title="1.3 适用情况"></a>1.3 适用情况</h3><p>vector<strong>一般</strong>可以直接替换数组</p>
+<p>有些情况普通数组无法解决：$n \times m$ 的矩阵，$1 \leq n$,$m \leq 10^6$且$n\times m\leq 10^6$</p>
+<ul>
+<li><p>如果用普通数组 int m[1000010][1000010],浪费内存，会导致MLE <em><strong>（我不知道）</strong></em></p>
+</li>
+<li><p>如果使用 <code>vector&lt;vector&lt;int&gt;&gt; mat(n + 10, vector&lt;int&gt;(m + 10));</code>，则可以完美解决该问题</p>
+</li>
+</ul>
+<p><strong>另外，vector的数据存储在堆空间中，不会爆栈</strong></p>
+<h3 id="1-4-注意事项"><a href="#1-4-注意事项" class="headerlink" title="1.4 注意事项"></a>1.4 注意事项</h3><ol>
+<li><strong>提前指定长度</strong><br>若长度指定，则应当直接在构造函数指定长度，而不是一个一个.push_back()。vector额外内存耗尽后的重分配是有时间开销的<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//优化前</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; a</span></span><br><span class="line"><span class="function">    <span class="title">for</span><span class="params">(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1e8</span>;i++)</span></span></span><br><span class="line"><span class="function">        a.<span class="title">push_back</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="comment">//优化后</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;a[<span class="number">1e8</span>]</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1e8</span>;i++)</span><br><span class="line">        a[i]=<span class="number">1</span>;</span><br><span class="line"><span class="number">2.</span> **当心<span class="type">size_t</span>溢出**</span><br><span class="line">   .<span class="built_in">size</span>();的返回值类型为<span class="type">size_t</span>，通常Oj平台使用的是<span class="number">32</span>位编译器，那么该类型范围为$[<span class="number">0</span>,<span class="number">10</span>^&#123;<span class="number">32</span>&#125;)$</span><br><span class="line">    ```<span class="function">cpp</span></span><br><span class="line"><span class="function">    vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">65536</span>)</span></span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> a=a.<span class="built_in">size</span>()*a.<span class="built_in">size</span>();<span class="comment">//直接溢出变成0</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="2-0-栈-先进后出"><a href="#2-0-栈-先进后出" class="headerlink" title="2.0 栈 (先进后出)"></a>2.0 栈 <em><strong>(先进后出)</strong></em></h2><h3 id="2-1-常用方法"><a href="#2-1-常用方法" class="headerlink" title="2.1 常用方法"></a>2.1 常用方法</h3><table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">用法</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">构造</td>
+<td align="center"><code>stack&lt;类型&gt;stk</code></td>
+<td align="center"><code>stack&lt;double&gt; stk;</code></td>
+</tr>
+<tr>
+<td align="center">进栈</td>
+<td align="center"><code>.push</code></td>
+<td align="center"><code>stk.push(1.0);</code></td>
+</tr>
+<tr>
+<td align="center">出栈</td>
+<td align="center"><code>.pop</code></td>
+<td align="center"><code>stk.pop();</code></td>
+</tr>
+<tr>
+<td align="center">取栈顶</td>
+<td align="center"><code>.top</code></td>
+<td align="center"><code>stk.top();</code></td>
+</tr>
+<tr>
+<td align="center">查看大小</td>
+<td align="center"><code>.size</code></td>
+<td align="center"><code>stk.size();</code></td>
+</tr>
+<tr>
+<td align="center">判空</td>
+<td align="center"><code>.empty</code></td>
+<td align="center"><code>stk.empty();</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    stack&lt;<span class="type">double</span>&gt; stk;</span><br><span class="line">    stk.<span class="built_in">push</span>(<span class="number">1.0</span>);<span class="comment">//进栈</span></span><br><span class="line">    stk.<span class="built_in">push</span>(<span class="number">1.4</span>);</span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">size</span>() &lt;&lt; endl;<span class="comment">//输出栈的大小</span></span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">empty</span>() &lt;&lt; endl;<span class="comment">//输出栈是否为空</span></span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//输出栈顶</span></span><br><span class="line">    stk.<span class="built_in">pop</span>();<span class="comment">//出栈</span></span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">top</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：只能操作栈顶，没有<code>.clean</code></strong></p>
+<h3 id="2-2-适用情况"><a href="#2-2-适用情况" class="headerlink" title="2.2 适用情况"></a>2.2 适用情况</h3><p>不卡常的话，可以直接使用</p>
+<h3 id="2-3-注意事项"><a href="#2-3-注意事项" class="headerlink" title="2.3 注意事项"></a>2.3 注意事项</h3><p>不可访问内部元素</p>
+<h2 id="3-0-队列queue-先进先出"><a href="#3-0-队列queue-先进先出" class="headerlink" title="3.0 队列queue(先进先出)"></a>3.0 队列<em><strong>queue(先进先出)</strong></em></h2><h3 id="3-1常用方法"><a href="#3-1常用方法" class="headerlink" title="3.1常用方法"></a>3.1常用方法</h3><table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">用法</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">构造</td>
+<td align="center"><code>queue&lt;类型&gt;que</code></td>
+<td align="center"><code>queue&lt;double&gt; que;</code></td>
+</tr>
+<tr>
+<td align="center">进队</td>
+<td align="center"><code>.push</code></td>
+<td align="center"><code>que.push(1.0);</code></td>
+</tr>
+<tr>
+<td align="center">出队</td>
+<td align="center"><code>.pop</code></td>
+<td align="center"><code>que.pop();</code></td>
+</tr>
+<tr>
+<td align="center">取队首</td>
+<td align="center"><code>.front</code></td>
+<td align="center"><code>que.front();</code></td>
+</tr>
+<tr>
+<td align="center">取队尾</td>
+<td align="center"><code>.back</code></td>
+<td align="center"><code>que.back();</code></td>
+</tr>
+<tr>
+<td align="center">查看大小</td>
+<td align="center"><code>.size</code></td>
+<td align="center"><code>que.size();</code></td>
+</tr>
+<tr>
+<td align="center">判空</td>
+<td align="center"><code>.empty</code></td>
+<td align="center"><code>que.empty();</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; que;</span><br><span class="line">    que.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    que.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    que.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">front</span>()&lt;&lt;endl;<span class="comment">//输出队首1</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">back</span>()&lt;&lt;endl;<span class="comment">//输出队尾3</span></span><br><span class="line">    que.<span class="built_in">pop</span>();<span class="comment">//删除队首元素1</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">front</span>()&lt;&lt;endl;<span class="comment">//输出队首2</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">back</span>()&lt;&lt;endl;<span class="comment">//输出队尾3</span></span><br><span class="line">    que.<span class="built_in">pop</span>();<span class="comment">//删除队首元素2</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">front</span>()&lt;&lt;endl;<span class="comment">//输出队首3</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">back</span>()&lt;&lt;endl;<span class="comment">//输出队尾3</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">size</span>()&lt;&lt;endl;<span class="comment">//输出队列大小1</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">empty</span>()&lt;&lt;endl;<span class="comment">//输出0，队列不为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-适用情况"><a href="#3-2-适用情况" class="headerlink" title="3.2 适用情况"></a>3.2 适用情况</h3><p>同栈</p>
+<h3 id="3-3-注意事项"><a href="#3-3-注意事项" class="headerlink" title="3.3 注意事项"></a>3.3 注意事项</h3><p>同栈</p>
+<h2 id="4-0-优先队列priority-queue-堆"><a href="#4-0-优先队列priority-queue-堆" class="headerlink" title="4.0 优先队列priority_queue(堆)"></a>4.0 优先队列<em><strong>priority_queue(堆)</strong></em></h2><p><code>#include&lt;queue&gt;</code></p>
+<h3 id="4-1-常用方法"><a href="#4-1-常用方法" class="headerlink" title="4.1 常用方法"></a>4.1 常用方法</h3><p><strong>构造</strong></p>
+<p><code>priority_queue&lt;类型,容器,比较器&gt;pque</code></p>
+<ul>
+<li>类型：要储存的数据类型</li>
+<li>容器：储存数据的底层容器，默认为<code>vector&lt;类型&gt;</code>，竞赛中保持默认就行</li>
+<li>比较器：比较大小使用的比较器，默认为<code>less&lt;类型&gt;</code>，可自定义</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="type">int</span>&gt;pque;<span class="comment">//存储int的大顶堆(最大数可直接取出)</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>,vecter&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt;&gt;pque;<span class="comment">//存储int的小顶堆</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">用法</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">进堆</td>
+<td align="center"><code>.push(元素)</code></td>
+<td align="center"><code>que.push(1.0);</code></td>
+</tr>
+<tr>
+<td align="center">出堆</td>
+<td align="center"><code>.pop</code></td>
+<td align="center"><code>que.pop();</code></td>
+</tr>
+<tr>
+<td align="center">取堆顶</td>
+<td align="center"><code>.front</code></td>
+<td align="center"><code>int a=que.top();</code></td>
+</tr>
+<tr>
+<td align="center">查看大小</td>
+<td align="center"><code>.size</code></td>
+<td align="center"><code>que.size();</code></td>
+</tr>
+<tr>
+<td align="center">判空</td>
+<td align="center"><code>.empty</code></td>
+<td align="center"><code>que.empty</code></td>
+</tr>
+</tbody></table>
+<p><em><strong>大顶堆</strong></em>：最大值在堆顶</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>&gt; pque;<span class="comment">//默认是大顶堆</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">4</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p><em><strong>小顶堆</strong></em>：最小值在堆顶</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    priority_queue&lt;ll,vector&lt;ll&gt;,greater&lt;ll&gt;&gt; pque;<span class="comment">//默认是大顶堆</span></span><br><span class="line">     pque.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">4</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素     </span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h3 id="4-2-适用情形"><a href="#4-2-适用情形" class="headerlink" title="4.2 适用情形"></a>4.2 适用情形</h3><p>持续维护元素的有序性：每次向队列插入大小不同的数，或者每次从队列中取出大小最大&#x2F;最小的元素，元素数是n，插入操作数量k。</p>
+<ul>
+<li>每次插入后快速排序：$k\cdot n \log n$</li>
+<li>使用优先队列维护：$k \cdot \log n$</li>
+</ul>
+<h3 id="4-3-注意事项"><a href="#4-3-注意事项" class="headerlink" title="4.3 注意事项"></a>4.3 注意事项</h3><p><strong>仅堆顶可读</strong><br><strong>所有元素不可写</strong><br>曲线救国：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tp=pque.<span class="built_in">top</span>();</span><br><span class="line">pque.<span class="built_in">pop</span>();</span><br><span class="line">pque.<span class="built_in">push</span>(tp<span class="number">+1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="5-0-集合set"><a href="#5-0-集合set" class="headerlink" title="5.0 集合set"></a>5.0 集合<em><strong>set</strong></em></h2><p><code>#include&lt;set&gt;</code><br>提供对数时间的插入，删除，查找的集合数据结构，底层原理是红黑树</p>
+<table>
+<thead>
+<tr>
+<th align="left">集合三要素</th>
+<th align="left">解释</th>
+<th align="left">set</th>
+<th align="left">multiset</th>
+<th align="left">unordered_set</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">确定性</td>
+<td align="left">一个元素要么在集合中，要么不在</td>
+<td align="left">✅</td>
+<td align="left">✅</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">互异性</td>
+<td align="left">一个元素仅可以在集合中出现一次</td>
+<td align="left">✅</td>
+<td align="left">❌（任意次）</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">无序性</td>
+<td align="left">集合中的元素是没有顺序的</td>
+<td align="left">❌（从小到大）</td>
+<td align="left">❌（从小到大）</td>
+<td align="left">✅</td>
+</tr>
+</tbody></table>
+<h3 id="5-1-常用方法"><a href="#5-1-常用方法" class="headerlink" title="5.1 常用方法"></a>5.1 常用方法</h3><p><em><strong>构造</strong></em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="type">int</span>&gt; st1;<span class="comment">//存储int的集合（从小到大）</span></span><br><span class="line">set&lt;<span class="type">int</span> greater&lt;<span class="type">int</span>&gt;&gt; st2;<span class="comment">//存储int的集合（从大到小）</span></span><br></pre></td></tr></table></figure>
+<p><em><strong>遍历</strong></em><br>可使用迭代器遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=st.<span class="built_in">begin</span>():it!=st.<span class="built_in">end</span>():++it)</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p>基于范围内的循环（c++11）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :st)</span><br><span class="line">    cout&lt;&lt;ele&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">0</span>);</span><br><span class="line">    st.<span class="built_in">erase</span>(<span class="number">2</span>);<span class="comment">//删除元素2</span></span><br><span class="line">    <span class="comment">//st.find(1);查找元素1,返回一个迭代器</span></span><br><span class="line">    <span class="keyword">if</span>(st.<span class="built_in">find</span>(<span class="number">1</span>) != st.<span class="built_in">end</span>())&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(st.<span class="built_in">count</span>(<span class="number">2</span>))&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; endl;<span class="comment">//输出集合大小</span></span><br><span class="line">    st.<span class="built_in">clear</span>();<span class="comment">//清空集合</span></span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">empty</span>() &lt;&lt; endl;<span class="comment">//判断集合是否为空</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele: st)&#123;</span><br><span class="line">        cout &lt;&lt; ele &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" data-id="cuidFeXqc_IY85AWJ-uOx5R1q" data-title="算法基础" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">2026年5月12日</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">七月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/11/blog/">blog</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/">实习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/">acm刷题</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/">排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

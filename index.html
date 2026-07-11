@@ -71,6 +71,721 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/11/blog/" class="article-date">
+  <time class="dt-published" datetime="2026-07-11T01:03:08.000Z" itemprop="datePublished">2026-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/11/blog/">blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Hexo 博客的日常操作几乎都集中在终端里，以下是最常用的命令，按使用场景分类整理。</p>
+<hr>
+<h3 id="一、环境准备与项目创建"><a href="#一、环境准备与项目创建" class="headerlink" title="一、环境准备与项目创建"></a>一、环境准备与项目创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g      <span class="comment"># 全局安装 Hexo 命令行工具</span></span><br><span class="line">hexo init myblog              <span class="comment"># 初始化一个名为 myblog 的新博客</span></span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install                   <span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果已有项目，只需在博客目录下执行后续命令。</p>
+</blockquote>
+<hr>
+<h3 id="二、内容创作"><a href="#二、内容创作" class="headerlink" title="二、内容创作"></a>二、内容创作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span>           <span class="comment"># 新建一篇正式文章 (source/_posts/)</span></span><br><span class="line">hexo new draft <span class="string">&quot;草稿标题&quot;</span>     <span class="comment"># 新建一篇草稿 (source/_drafts/)</span></span><br><span class="line">hexo publish <span class="string">&quot;草稿文件名&quot;</span>     <span class="comment"># 将草稿发布为正式文章（会移入 _posts）</span></span><br><span class="line">hexo new page <span class="string">&quot;页面路径&quot;</span>      <span class="comment"># 新建独立页面，如 about (source/about/index.md)</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文件名会自动以日期前缀命名，例如 <code>2026-07-11-文章标题.md</code>。</p>
+</blockquote>
+<hr>
+<h3 id="三、本地预览与调试"><a href="#三、本地预览与调试" class="headerlink" title="三、本地预览与调试"></a>三、本地预览与调试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo server                  <span class="comment"># 启动本地服务器，默认 http://localhost:4000</span></span><br><span class="line">hexo server -p 5000          <span class="comment"># 指定端口（比如 5000）</span></span><br><span class="line">hexo server --draft          <span class="comment"># 预览时显示草稿文章</span></span><br><span class="line">hexo server --debug          <span class="comment"># 开启调试模式，输出更详细日志</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>hexo s</code> 是 <code>hexo server</code> 的简写，效果完全一样。</p>
+</blockquote>
+<hr>
+<h3 id="四、生成与清理"><a href="#四、生成与清理" class="headerlink" title="四、生成与清理"></a>四、生成与清理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate                <span class="comment"># 生成静态文件到 public/ 目录</span></span><br><span class="line">hexo generate --draft        <span class="comment"># 生成时包含草稿内容</span></span><br><span class="line">hexo generate --watch        <span class="comment"># 监视文件变动并自动重新生成</span></span><br><span class="line">hexo clean                   <span class="comment"># 清除缓存 (db.json) 和已生成的 public/ 目录</span></span><br><span class="line">hexo deploy                  <span class="comment"># 部署网站（需先在 _config.yml 里配好 deploy 参数）</span></span><br></pre></td></tr></table></figure>
+
+<p>常用组合技：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy   <span class="comment"># 清理 → 生成 → 部署 一气呵成</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>hexo g</code> 是 <code>hexo generate</code> 的简写，<code>hexo d</code> 是 <code>hexo deploy</code> 的简写。<br>上述组合命令可进一步简写为：<code>hexo clean &amp;&amp; hexo g -d</code> 或 <code>hexo d -g</code>（先构建后部署）。</p>
+</blockquote>
+<hr>
+<h3 id="五、查看与管理"><a href="#五、查看与管理" class="headerlink" title="五、查看与管理"></a>五、查看与管理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo list post               <span class="comment"># 列出所有正式文章</span></span><br><span class="line">hexo list page               <span class="comment"># 列出所有独立页面</span></span><br><span class="line">hexo list draft              <span class="comment"># 列出所有草稿</span></span><br><span class="line">hexo list tag                <span class="comment"># 列出所有标签</span></span><br><span class="line">hexo list category           <span class="comment"># 列出所有分类</span></span><br><span class="line"></span><br><span class="line">hexo --version               <span class="comment"># 查看 Hexo 及依赖版本</span></span><br><span class="line">hexo <span class="built_in">help</span>                    <span class="comment"># 查看完整的帮助信息</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="六、高级技巧-常用选项速查"><a href="#六、高级技巧-常用选项速查" class="headerlink" title="六、高级技巧 &amp; 常用选项速查"></a>六、高级技巧 &amp; 常用选项速查</h3><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>命令示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只生成最近 5 篇文章</td>
+<td><code>hexo g --limit 5</code></td>
+<td>预览时可加快速度</td>
+</tr>
+<tr>
+<td>生成后自动部署</td>
+<td><code>hexo g -d</code> 或 <code>hexo d -g</code></td>
+<td>免去重复输入</td>
+</tr>
+<tr>
+<td>强制覆盖部署</td>
+<td><code>hexo d --force</code></td>
+<td>部署时忽略本地与远端差异</td>
+</tr>
+<tr>
+<td>不启动浏览器</td>
+<td><code>hexo s --open</code></td>
+<td>启动后自动打开浏览器 (部分环境可能无效)</td>
+</tr>
+<tr>
+<td>忽略缓存重新生成</td>
+<td><code>hexo g --force</code></td>
+<td>强制重新生成所有页面</td>
+</tr>
+<tr>
+<td>安全模式（不加载插件）</td>
+<td><code>hexo s --safe</code></td>
+<td>排查插件问题用</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="日常最常见的工作流"><a href="#日常最常见的工作流" class="headerlink" title="日常最常见的工作流"></a>日常最常见的工作流</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 写新文章</span></span><br><span class="line">hexo new <span class="string">&quot;我的新博文&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 使用编辑器撰写内容（VS Code / Typora 等）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 本地预览</span></span><br><span class="line">hexo s --draft   <span class="comment"># 如果还有未发布的草稿</span></span><br><span class="line">hexo s           <span class="comment"># 不包含草稿的正式预览</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 确认无误后部署</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p>这些命令已经覆盖了 Hexo 博客 90% 的日常维护需求，熟练掌握后效率会非常高。如果部署环节出现问题，务必先检查根目录 <code>_config.yml</code> 中的 <code>deploy</code> 配置是否正确。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/07/11/blog/" data-id="cuidfKS4skn4dSnmMjhF-ng23" data-title="blog" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-实习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2026-07-10T07:53:46.000Z" itemprop="datePublished">2026-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/10/%E5%AE%9E%E4%B9%A0/">实习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><p>太傻逼了这个地方</p>
+<p>跟你妈牢房似的</p>
+<p>还要待14天</p>
+<p>真死🐎了</p>
+<h1 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h1><ol>
+<li>学习<em>gitee</em><ol>
+<li>使用原因</li>
+</ol>
+<ul>
+<li>代码多，保存费事</li>
+<li>可以随时回档，可随时找回</li>
+<li>凡是留痕</li>
+</ul>
+<ol start="2">
+<li>git版本控制软件&#x3D;&#x3D;&gt;SVN公司里面绝对不会用</li>
+</ol>
+<ul>
+<li>URL网址进行克隆和推送</li>
+</ul>
+<ol start="3">
+<li>git <em>断网的情况下也能上传</em></li>
+</ol>
+<ul>
+<li>安装了git软件以后，使用了某个git命令后，我的电脑就会变成本地仓库</li>
+<li>在离线的时候也能编辑代码</li>
+<li>在联网下会发送到远程仓库</li>
+<li>gitlab不好安装</li>
+</ul>
+</li>
+<li><ol>
+<li>安装git软件</li>
+<li>创建一个gitee账户 就有gitlab</li>
+<li>使用git命令</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/07/10/%E5%AE%9E%E4%B9%A0/" data-id="cuidO_RQUFL-xbBmfC7mUzR1X" data-title="实习" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-c-学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2026-05-14T08:56:31.000Z" itemprop="datePublished">2026-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="memset设置数组内容"><a href="#memset设置数组内容" class="headerlink" title="memset设置数组内容"></a>memset设置数组内容</h1><h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">memset</span><span class="params">(<span class="type">void</span> * ptr,<span class="type">int</span> value,<span class="type">size_t</span> num)</span></span>;</span><br><span class="line"><span class="comment">//ptr -- 指针：指向了要设置的内存块的起始位置</span></span><br><span class="line"><span class="comment">//value -- 要设置的值</span></span><br><span class="line"><span class="comment">//num -- 设置的字节个数 </span></span><br></pre></td></tr></table></figure>
+<p>示范：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> arr[]=<span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">cout&lt;&lt;arr&lt;&lt;endl;</span><br><span class="line"><span class="built_in">memset</span>(arr,<span class="string">&#x27;x&#x27;</span>,<span class="number">5</span>);</span><br><span class="line">cout&lt;&lt;arr&lt;&lt;endl;<span class="comment">//xxxxx world</span></span><br></pre></td></tr></table></figure>
+<h1 id="memcpy拷贝数组内容"><a href="#memcpy拷贝数组内容" class="headerlink" title="memcpy拷贝数组内容"></a>memcpy拷贝数组内容</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="fget"><a href="#fget" class="headerlink" title="fget"></a>fget</h1><p>读取字符串时会保留\n且会自动在结尾加上\0</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fgets</span>(arr,<span class="number">20</span>,stdin);<span class="comment">//stdin 标准输入流 -- 键盘，20为字符长（包含\0）</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/14/c-%E5%AD%A6%E4%B9%A0/" data-id="cuidGMe6I12od5X01o6axqXJw" data-title="c++学习" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-acm学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2026-05-13T10:10:06.000Z" itemprop="datePublished">2026-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/">acm刷题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="P1035-NOI2002-普及组-级数求和"><a href="#P1035-NOI2002-普及组-级数求和" class="headerlink" title="P1035 [NOI2002 普及组] 级数求和"></a>P1035 [NOI2002 普及组] 级数求和</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知：$S_n&#x3D; 1+\dfrac{1}{2}+\dfrac{1}{3}+…+\dfrac{1}{n}$。显然对于任意一个整数 $k$，当 $n$ 足够大的时候，$S_n&gt;k$。</p>
+<p>现给出一个整数 $k$，要求计算出一个最小的 $n$，使得 $S_n&gt;k$。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一个正整数 $k$。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个正整数 $n$。</p>
+<h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p><strong>【数据范围】</strong></p>
+<p>对于 $100%$ 的数据，$1\le k \le 15$。</p>
+<p><strong>【题目来源】</strong></p>
+<p>NOIP 2002 普及组第一题</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">S</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="type">double</span> sum=<span class="number">0.0</span>;</span><br><span class="line">	ll n=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(sum&lt;=k)&#123;</span><br><span class="line">        n++;</span><br><span class="line">		sum+=<span class="number">1.0</span>/n;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> k=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;k;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">S</span>(k)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>n++需要注意程序运行顺序</strong></em></p>
+<h1 id="P1047-NOIP-2005-普及组-校门外的树"><a href="#P1047-NOIP-2005-普及组-校门外的树" class="headerlink" title="P1047 [NOIP 2005 普及组] 校门外的树"></a>P1047 [NOIP 2005 普及组] 校门外的树</h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>某校大门外长度为 $l$ 的马路上有一排树，每两棵相邻的树之间的间隔都是 $1$ 米。我们可以把马路看成一个数轴，马路的一端在数轴 $0$ 的位置，另一端在 $l$ 的位置；数轴上的每个整数点，即 $0,1,2,\dots,l$，都种有一棵树。</p>
+<p>由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。</p>
+<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行有两个整数，分别表示马路的长度 $l$ 和区域的数目 $m$。</p>
+<p>接下来 $m$ 行，每行两个整数 $u, v$，表示一个区域的起始点和终止点的坐标。</p>
+<h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个整数，表示将这些树都移走后，马路上剩余的树木数量。</p>
+<h2 id="输入输出样例-1-1"><a href="#输入输出样例-1-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1-1"><a href="#输入-1-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">500 3</span><br><span class="line">150 300</span><br><span class="line">100 200</span><br><span class="line">470 471</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-1-1"><a href="#输出-1-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">298</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示-1"><a href="#说明-提示-1" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p><strong>【数据范围】</strong></p>
+<ul>
+<li>对于 $20%$ 的数据，保证区域之间没有重合的部分。</li>
+<li>对于 $100%$ 的数据，保证 $1 \leq l \leq 10^4$，$1 \leq m \leq 100$，$0 \leq u \leq v \leq l$。</li>
+</ul>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> l, m;</span><br><span class="line">    cin &gt;&gt; l &gt;&gt; m;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 树的总数是 l+1 棵，位置从 0 到 l</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">tree</span><span class="params">(l + <span class="number">1</span>, <span class="literal">true</span>)</span></span>;  <span class="comment">// true 表示树还在</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        <span class="comment">// 将区间内的树标记为 false（已移走）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = u; j &lt;= v; ++j) &#123;</span><br><span class="line">            tree[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= l; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (tree[i]) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>错解</strong></em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> m=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> l=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;l&gt;&gt;m;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt;L;</span><br><span class="line">	priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt; &gt; q;</span><br><span class="line">	priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt; &gt; z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">		<span class="type">int</span> u=<span class="number">0</span>,v=<span class="number">0</span>;</span><br><span class="line">		cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">		q.<span class="built_in">push</span>(u);</span><br><span class="line">		z.<span class="built_in">push</span>(v);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">		L.<span class="built_in">resize</span>(q.<span class="built_in">top</span>(),<span class="number">1</span>);</span><br><span class="line">		L.<span class="built_in">resize</span>(z.<span class="built_in">top</span>(),<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	L.<span class="built_in">resize</span>(l,<span class="number">1</span>);</span><br><span class="line">	<span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;l;i++)&#123;</span><br><span class="line">		sum+=L[i];</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;sum; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解释：<br>问题出在 <code>resize</code> 的作用上</p>
+<p><code>L.resize(n, val)</code> 的意思是：把 <code>L</code> 的大小直接改成 <code>n</code>。</p>
+<ul>
+<li>如果 <code>n &gt; L.size()</code>，则新增的元素全部用 <code>val</code> 填充。</li>
+<li>如果 <code>n &lt; L.size()</code>，则砍掉末尾多余的元素。</li>
+<li></li>
+</ul>
+<p>你设想的是：在区间 <code>[u, v]</code> 内把树“标记为 0”，但这里 <code>resize</code> 只会粗暴地改变整个 <code>vector</code> 的长度，并不能做到<strong>只修改中间一段</strong>的值。</p>
+<h3 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h3><p>假设 <code>l = 10</code>，区间 <code>[2,5]</code> 和 <code>[3,6]</code>。</p>
+<ul>
+<li><p><strong>第一次循环</strong>：<code>q.top() = 2</code>, <code>z.top() = 3</code><br>执行 <code>L.resize(2, 1)</code> → <code>L</code> 变成 <code>[1, 1]</code><br>执行 <code>L.resize(3, 0)</code> → <code>L</code> 变成 <code>[1, 1, 0]</code>（索引 0~2）</p>
+</li>
+<li><p><strong>第二次循环</strong>：<code>q.top() = 3</code>, <code>z.top() = 6</code><br>执行 <code>L.resize(3, 1)</code> → <code>L</code> 不变，大小已是 3，<code>[1, 1, 0]</code><br>执行 <code>L.resize(6, 0)</code> → <code>L</code> 变成 <code>[1, 1, 0, 0, 0, 0]</code></p>
+</li>
+<li><p>最后 <code>L.resize(10, 1)</code> → <code>L</code> 变成 <code>[1, 1, 0, 0, 0, 0, 1, 1, 1, 1]</code><br>统计 <code>sum = 6</code>，而正确答案应该是 4（路长 <code>l=10</code> 表示位置 0~10 共 11 棵树，这里暂且忽略细节，但显然用 <code>resize</code> 得不到正确标记）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="priority-queue-的用法问题"><a href="#priority-queue-的用法问题" class="headerlink" title="priority_queue 的用法问题"></a><code>priority_queue</code> 的用法问题</h2><p>你分别用两个最小堆来存放所有区间的起点 <code>u</code> 和终点 <code>v</code>，但这样取出的 <code>u</code> 和 <code>v</code> <strong>并不是成对的原区间</strong>，而是把所有起点和终点各自排序后再依次配对。虽然当区间无重叠或特殊情况下可能碰巧正确，但如果区间有重叠，这种“全局排序再配对”的方式会丢失区间对应关系，造成错误。</p>
+<h3 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a>举个例子</h3><p>区间 <code>[1, 10]</code> 和 <code>[2, 3]</code>  </p>
+<ul>
+<li>排序后起点：<code>1, 2</code>  </li>
+<li>排序后终点：<code>3, 10</code>  </li>
+<li>配对后变成：<code>[1, 3]</code> 和 <code>[2, 10]</code></li>
+</ul>
+<p>这会多挖掉很多树，与原始区间意义完全不同。</p>
+<p>感言：byd还是没看懂</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/13/acm%E5%AD%A6%E4%B9%A0/" data-id="cuid6Y-sBAOtEizH_hmJqR6yd" data-title="acm刷题" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T12:38:09.000Z" itemprop="datePublished">2026-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/12/%E6%8E%92%E5%BA%8F/">排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = a[(l + r) / <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">do</span> i++; <span class="keyword">while</span> (a[i] &lt; x);</span><br><span class="line">        <span class="keyword">do</span> j--; <span class="keyword">while</span> (a[j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(a[i], a[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(a, l, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(a, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>选取中间元素作为基准值 x。使用两个指针 i 和 j，分别从数组两端向中间扫描：</p>
+<ol>
+<li>i 从左向右寻找第一个<code>大于等于</code> x 的元素；</li>
+<li>j 从右向左寻找第一个<code>小于等于</code> x 的元素。</li>
+<li>若 i &lt; j，则<code>交换</code>这两个元素，让小的去左边、大的去右边。</li>
+<li>当 i 和 j 相遇或交错后，数组被切分为左半部分（全部 ≤ x）和右半部分（全部 ≥ x），再对这两部分递归执行快速排序。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/12/%E6%8E%92%E5%BA%8F/" data-id="cuid0nKvVT-ZZcqIJCml4sitV" data-title="排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-算法基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T11:12:57.000Z" itemprop="datePublished">2026-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/">算法基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我操了，怎么这么多</p>
+<h1 id="STL容器–标准模板库（算法，容器，仿函数，迭代器）"><a href="#STL容器–标准模板库（算法，容器，仿函数，迭代器）" class="headerlink" title="STL容器–标准模板库（算法，容器，仿函数，迭代器）"></a>STL容器–标准模板库（算法，容器，仿函数，迭代器）</h1><h2 id="1-0-向量vector"><a href="#1-0-向量vector" class="headerlink" title="1.0 向量vector"></a>1.0 向量vector</h2><h3 id="1-1-构造"><a href="#1-1-构造" class="headerlink" title="1.1 构造"></a>1.1 构造</h3><p>vector&lt;数据类型&gt;vec;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">    vector&lt;<span class="type">double</span>&gt;vec2;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(<span class="number">5</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">6</span>,<span class="number">10</span>)); <span class="comment">//初始化一个5行6列的二维数组，初始值为10</span></span><br><span class="line">    vector&lt;vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&gt;<span class="built_in">dp1</span>(<span class="number">5</span>,vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;(<span class="number">6</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">7</span>,<span class="number">10</span>))); <span class="comment">//初始化一个5行6列7层的三维数组，初始值为10</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec3[<span class="number">100</span>]; <span class="comment">//定义一个长度为100的vector数组，每个元素都是一个vector&lt;int&gt;   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-尾接-尾删"><a href="#1-2-尾接-尾删" class="headerlink" title="1.2 尾接&amp;&amp;尾删"></a>1.2 尾接&amp;&amp;尾删</h3><p>尾部增加一个大小为m的数值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">push_back</span>(m);</span><br></pre></td></tr></table></figure>
+<p>在尾部删去一个数值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.pop_back();</span><br></pre></td></tr></table></figure>
+<p>将整个数组删除</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">clean</span>();</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">增长数组</th>
+<th align="center">缩短数组</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">arr.resize(m)</td>
+<td align="center">增长到m(增加的数默认为0)</td>
+<td align="center">缩短到m(删去末尾数组)</td>
+</tr>
+<tr>
+<td align="center">数组长度（int类型）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">size</span>()</span><br></pre></td></tr></table></figure>
+<p>数组是否为空(bool类型)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">empty</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; arr;</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :arr)</span><br><span class="line">        cout&lt;&lt;ele&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;arr.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">pop_back</span>();</span><br><span class="line">    arr.<span class="built_in">pop_back</span>();</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :arr)</span><br><span class="line">        cout&lt;&lt;ele&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">clear</span>();</span><br><span class="line">    cout&lt;&lt;arr.<span class="built_in">size</span>()&lt;&lt;arr.<span class="built_in">empty</span>()<span class="comment">/*bool*/</span>&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">5</span>);<span class="comment">//将长度增长到5，新增元素默认值为0</span></span><br><span class="line">    arr.<span class="built_in">clear</span>();</span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">5</span>,<span class="number">1</span>);<span class="comment">//将长度增长到5，新增元素默认值为1</span></span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">3</span>);<span class="comment">//将长度缩小到3，后面元素被删除</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-适用情况"><a href="#1-3-适用情况" class="headerlink" title="1.3 适用情况"></a>1.3 适用情况</h3><p>vector<strong>一般</strong>可以直接替换数组</p>
+<p>有些情况普通数组无法解决：$n \times m$ 的矩阵，$1 \leq n$,$m \leq 10^6$且$n\times m\leq 10^6$</p>
+<ul>
+<li><p>如果用普通数组 int m[1000010][1000010],浪费内存，会导致MLE <em><strong>（我不知道）</strong></em></p>
+</li>
+<li><p>如果使用 <code>vector&lt;vector&lt;int&gt;&gt; mat(n + 10, vector&lt;int&gt;(m + 10));</code>，则可以完美解决该问题</p>
+</li>
+</ul>
+<p><strong>另外，vector的数据存储在堆空间中，不会爆栈</strong></p>
+<h3 id="1-4-注意事项"><a href="#1-4-注意事项" class="headerlink" title="1.4 注意事项"></a>1.4 注意事项</h3><ol>
+<li><strong>提前指定长度</strong><br>若长度指定，则应当直接在构造函数指定长度，而不是一个一个.push_back()。vector额外内存耗尽后的重分配是有时间开销的<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//优化前</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; a</span></span><br><span class="line"><span class="function">    <span class="title">for</span><span class="params">(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1e8</span>;i++)</span></span></span><br><span class="line"><span class="function">        a.<span class="title">push_back</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="comment">//优化后</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;a[<span class="number">1e8</span>]</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1e8</span>;i++)</span><br><span class="line">        a[i]=<span class="number">1</span>;</span><br><span class="line"><span class="number">2.</span> **当心<span class="type">size_t</span>溢出**</span><br><span class="line">   .<span class="built_in">size</span>();的返回值类型为<span class="type">size_t</span>，通常Oj平台使用的是<span class="number">32</span>位编译器，那么该类型范围为$[<span class="number">0</span>,<span class="number">10</span>^&#123;<span class="number">32</span>&#125;)$</span><br><span class="line">    ```<span class="function">cpp</span></span><br><span class="line"><span class="function">    vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">65536</span>)</span></span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> a=a.<span class="built_in">size</span>()*a.<span class="built_in">size</span>();<span class="comment">//直接溢出变成0</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="2-0-栈-先进后出"><a href="#2-0-栈-先进后出" class="headerlink" title="2.0 栈 (先进后出)"></a>2.0 栈 <em><strong>(先进后出)</strong></em></h2><h3 id="2-1-常用方法"><a href="#2-1-常用方法" class="headerlink" title="2.1 常用方法"></a>2.1 常用方法</h3><table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">用法</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">构造</td>
+<td align="center"><code>stack&lt;类型&gt;stk</code></td>
+<td align="center"><code>stack&lt;double&gt; stk;</code></td>
+</tr>
+<tr>
+<td align="center">进栈</td>
+<td align="center"><code>.push</code></td>
+<td align="center"><code>stk.push(1.0);</code></td>
+</tr>
+<tr>
+<td align="center">出栈</td>
+<td align="center"><code>.pop</code></td>
+<td align="center"><code>stk.pop();</code></td>
+</tr>
+<tr>
+<td align="center">取栈顶</td>
+<td align="center"><code>.top</code></td>
+<td align="center"><code>stk.top();</code></td>
+</tr>
+<tr>
+<td align="center">查看大小</td>
+<td align="center"><code>.size</code></td>
+<td align="center"><code>stk.size();</code></td>
+</tr>
+<tr>
+<td align="center">判空</td>
+<td align="center"><code>.empty</code></td>
+<td align="center"><code>stk.empty();</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    stack&lt;<span class="type">double</span>&gt; stk;</span><br><span class="line">    stk.<span class="built_in">push</span>(<span class="number">1.0</span>);<span class="comment">//进栈</span></span><br><span class="line">    stk.<span class="built_in">push</span>(<span class="number">1.4</span>);</span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">size</span>() &lt;&lt; endl;<span class="comment">//输出栈的大小</span></span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">empty</span>() &lt;&lt; endl;<span class="comment">//输出栈是否为空</span></span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//输出栈顶</span></span><br><span class="line">    stk.<span class="built_in">pop</span>();<span class="comment">//出栈</span></span><br><span class="line">    cout&lt;&lt; stk.<span class="built_in">top</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：只能操作栈顶，没有<code>.clean</code></strong></p>
+<h3 id="2-2-适用情况"><a href="#2-2-适用情况" class="headerlink" title="2.2 适用情况"></a>2.2 适用情况</h3><p>不卡常的话，可以直接使用</p>
+<h3 id="2-3-注意事项"><a href="#2-3-注意事项" class="headerlink" title="2.3 注意事项"></a>2.3 注意事项</h3><p>不可访问内部元素</p>
+<h2 id="3-0-队列queue-先进先出"><a href="#3-0-队列queue-先进先出" class="headerlink" title="3.0 队列queue(先进先出)"></a>3.0 队列<em><strong>queue(先进先出)</strong></em></h2><h3 id="3-1常用方法"><a href="#3-1常用方法" class="headerlink" title="3.1常用方法"></a>3.1常用方法</h3><table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">用法</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">构造</td>
+<td align="center"><code>queue&lt;类型&gt;que</code></td>
+<td align="center"><code>queue&lt;double&gt; que;</code></td>
+</tr>
+<tr>
+<td align="center">进队</td>
+<td align="center"><code>.push</code></td>
+<td align="center"><code>que.push(1.0);</code></td>
+</tr>
+<tr>
+<td align="center">出队</td>
+<td align="center"><code>.pop</code></td>
+<td align="center"><code>que.pop();</code></td>
+</tr>
+<tr>
+<td align="center">取队首</td>
+<td align="center"><code>.front</code></td>
+<td align="center"><code>que.front();</code></td>
+</tr>
+<tr>
+<td align="center">取队尾</td>
+<td align="center"><code>.back</code></td>
+<td align="center"><code>que.back();</code></td>
+</tr>
+<tr>
+<td align="center">查看大小</td>
+<td align="center"><code>.size</code></td>
+<td align="center"><code>que.size();</code></td>
+</tr>
+<tr>
+<td align="center">判空</td>
+<td align="center"><code>.empty</code></td>
+<td align="center"><code>que.empty();</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; que;</span><br><span class="line">    que.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    que.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    que.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">front</span>()&lt;&lt;endl;<span class="comment">//输出队首1</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">back</span>()&lt;&lt;endl;<span class="comment">//输出队尾3</span></span><br><span class="line">    que.<span class="built_in">pop</span>();<span class="comment">//删除队首元素1</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">front</span>()&lt;&lt;endl;<span class="comment">//输出队首2</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">back</span>()&lt;&lt;endl;<span class="comment">//输出队尾3</span></span><br><span class="line">    que.<span class="built_in">pop</span>();<span class="comment">//删除队首元素2</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">front</span>()&lt;&lt;endl;<span class="comment">//输出队首3</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">back</span>()&lt;&lt;endl;<span class="comment">//输出队尾3</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">size</span>()&lt;&lt;endl;<span class="comment">//输出队列大小1</span></span><br><span class="line">    cout&lt;&lt;que.<span class="built_in">empty</span>()&lt;&lt;endl;<span class="comment">//输出0，队列不为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-适用情况"><a href="#3-2-适用情况" class="headerlink" title="3.2 适用情况"></a>3.2 适用情况</h3><p>同栈</p>
+<h3 id="3-3-注意事项"><a href="#3-3-注意事项" class="headerlink" title="3.3 注意事项"></a>3.3 注意事项</h3><p>同栈</p>
+<h2 id="4-0-优先队列priority-queue-堆"><a href="#4-0-优先队列priority-queue-堆" class="headerlink" title="4.0 优先队列priority_queue(堆)"></a>4.0 优先队列<em><strong>priority_queue(堆)</strong></em></h2><p><code>#include&lt;queue&gt;</code></p>
+<h3 id="4-1-常用方法"><a href="#4-1-常用方法" class="headerlink" title="4.1 常用方法"></a>4.1 常用方法</h3><p><strong>构造</strong></p>
+<p><code>priority_queue&lt;类型,容器,比较器&gt;pque</code></p>
+<ul>
+<li>类型：要储存的数据类型</li>
+<li>容器：储存数据的底层容器，默认为<code>vector&lt;类型&gt;</code>，竞赛中保持默认就行</li>
+<li>比较器：比较大小使用的比较器，默认为<code>less&lt;类型&gt;</code>，可自定义</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="type">int</span>&gt;pque;<span class="comment">//存储int的大顶堆(最大数可直接取出)</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>,vecter&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt;&gt;pque;<span class="comment">//存储int的小顶堆</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">作用</th>
+<th align="center">用法</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">进堆</td>
+<td align="center"><code>.push(元素)</code></td>
+<td align="center"><code>que.push(1.0);</code></td>
+</tr>
+<tr>
+<td align="center">出堆</td>
+<td align="center"><code>.pop</code></td>
+<td align="center"><code>que.pop();</code></td>
+</tr>
+<tr>
+<td align="center">取堆顶</td>
+<td align="center"><code>.front</code></td>
+<td align="center"><code>int a=que.top();</code></td>
+</tr>
+<tr>
+<td align="center">查看大小</td>
+<td align="center"><code>.size</code></td>
+<td align="center"><code>que.size();</code></td>
+</tr>
+<tr>
+<td align="center">判空</td>
+<td align="center"><code>.empty</code></td>
+<td align="center"><code>que.empty</code></td>
+</tr>
+</tbody></table>
+<p><em><strong>大顶堆</strong></em>：最大值在堆顶</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>&gt; pque;<span class="comment">//默认是大顶堆</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">4</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p><em><strong>小顶堆</strong></em>：最小值在堆顶</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    priority_queue&lt;ll,vector&lt;ll&gt;,greater&lt;ll&gt;&gt; pque;<span class="comment">//默认是大顶堆</span></span><br><span class="line">     pque.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">push</span>(<span class="number">4</span>);</span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素</span></span><br><span class="line">    pque.<span class="built_in">pop</span>();<span class="comment">//删除堆顶元素</span></span><br><span class="line">    cout &lt;&lt; pque.<span class="built_in">top</span>() &lt;&lt; endl;<span class="comment">//取出堆顶元素     </span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h3 id="4-2-适用情形"><a href="#4-2-适用情形" class="headerlink" title="4.2 适用情形"></a>4.2 适用情形</h3><p>持续维护元素的有序性：每次向队列插入大小不同的数，或者每次从队列中取出大小最大&#x2F;最小的元素，元素数是n，插入操作数量k。</p>
+<ul>
+<li>每次插入后快速排序：$k\cdot n \log n$</li>
+<li>使用优先队列维护：$k \cdot \log n$</li>
+</ul>
+<h3 id="4-3-注意事项"><a href="#4-3-注意事项" class="headerlink" title="4.3 注意事项"></a>4.3 注意事项</h3><p><strong>仅堆顶可读</strong><br><strong>所有元素不可写</strong><br>曲线救国：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tp=pque.<span class="built_in">top</span>();</span><br><span class="line">pque.<span class="built_in">pop</span>();</span><br><span class="line">pque.<span class="built_in">push</span>(tp<span class="number">+1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="5-0-集合set"><a href="#5-0-集合set" class="headerlink" title="5.0 集合set"></a>5.0 集合<em><strong>set</strong></em></h2><p><code>#include&lt;set&gt;</code><br>提供对数时间的插入，删除，查找的集合数据结构，底层原理是红黑树</p>
+<table>
+<thead>
+<tr>
+<th align="left">集合三要素</th>
+<th align="left">解释</th>
+<th align="left">set</th>
+<th align="left">multiset</th>
+<th align="left">unordered_set</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">确定性</td>
+<td align="left">一个元素要么在集合中，要么不在</td>
+<td align="left">✅</td>
+<td align="left">✅</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">互异性</td>
+<td align="left">一个元素仅可以在集合中出现一次</td>
+<td align="left">✅</td>
+<td align="left">❌（任意次）</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">无序性</td>
+<td align="left">集合中的元素是没有顺序的</td>
+<td align="left">❌（从小到大）</td>
+<td align="left">❌（从小到大）</td>
+<td align="left">✅</td>
+</tr>
+</tbody></table>
+<h3 id="5-1-常用方法"><a href="#5-1-常用方法" class="headerlink" title="5.1 常用方法"></a>5.1 常用方法</h3><p><em><strong>构造</strong></em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="type">int</span>&gt; st1;<span class="comment">//存储int的集合（从小到大）</span></span><br><span class="line">set&lt;<span class="type">int</span> greater&lt;<span class="type">int</span>&gt;&gt; st2;<span class="comment">//存储int的集合（从大到小）</span></span><br></pre></td></tr></table></figure>
+<p><em><strong>遍历</strong></em><br>可使用迭代器遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=st.<span class="built_in">begin</span>():it!=st.<span class="built_in">end</span>():++it)</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p>基于范围内的循环（c++11）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :st)</span><br><span class="line">    cout&lt;&lt;ele&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">0</span>);</span><br><span class="line">    st.<span class="built_in">erase</span>(<span class="number">2</span>);<span class="comment">//删除元素2</span></span><br><span class="line">    <span class="comment">//st.find(1);查找元素1,返回一个迭代器</span></span><br><span class="line">    <span class="keyword">if</span>(st.<span class="built_in">find</span>(<span class="number">1</span>) != st.<span class="built_in">end</span>())&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(st.<span class="built_in">count</span>(<span class="number">2</span>))&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; endl;<span class="comment">//输出集合大小</span></span><br><span class="line">    st.<span class="built_in">clear</span>();<span class="comment">//清空集合</span></span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">empty</span>() &lt;&lt; endl;<span class="comment">//判断集合是否为空</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele: st)&#123;</span><br><span class="line">        cout &lt;&lt; ele &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" data-id="cuidFeXqc_IY85AWJ-uOx5R1q" data-title="算法基础" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-第一天" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T10:26:41.000Z" itemprop="datePublished">2026-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/">2026年5月12日</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h1><p>我想从今天开始学算法不知道能不能速成qaq</p>
+<h1 id="P1000超级玛丽游戏"><a href="#P1000超级玛丽游戏" class="headerlink" title="P1000超级玛丽游戏"></a>P1000超级玛丽游戏</h1><pre><code>何意味
+请你用字符画的形式输出超级玛丽中的一个场景：
+                ********
+           ************
+           ####....#.
+         #..###.....##....
+         ###.......######              ###            ###
+            ...........               #...#          #...#
+           ##*#######                 #.#.#          #.#.#
+        ####*******######             #.#.#          #.#.#
+       ...#***.****.*###....          #...#          #...#
+       ....**********##.....           ###            ###
+       ....****    *****....
+         ####        ####
+       ######        ######
+差不多就是输出这个
+cout?
+唐比ds，直接给我输出——————》不是，真要一行一行输出
+vscode自动填充真好用
+byd缩放示例变形了
+</code></pre>
+<h1 id="P1002过河卒"><a href="#P1002过河卒" class="headerlink" title="P1002过河卒"></a>P1002过河卒</h1><pre><code>好像现在做不了，只能先学算法了
+# P1002 [NOIP 2002 普及组] 过河卒
+</code></pre>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>棋盘上 $A$ 点有一个过河卒，需要走到目标 $B$ 点。卒行走的规则：可以向下、或者向右。同时在棋盘上 $C$ 点有一个对方的马，该马所在的点和所有跳跃一步可达的点称为对方马的控制点。因此称之为“马拦过河卒”。</p>
+<p>棋盘用坐标表示，$A$ 点 $(0, 0)$、$B$ 点 $(n, m)$，同样马的位置坐标是需要给出的。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ipmwl52i.png"></p>
+<p>现在要求你计算出卒从 $A$ 点能够到达 $B$ 点的路径的条数，假设马的位置是固定不动的，并不是卒走一步马走一步。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一行四个正整数，分别表示 $B$ 点坐标和马的坐标。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，表示所有的路径条数。</p>
+<h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6 6 3 3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p>对于 $100 %$ 的数据，$1 \le n, m \le 20$，$0 \le$ 马的坐标 $\le 20$。</p>
+<p>保证起点不是马的控制点。</p>
+<p><strong>【题目来源】</strong></p>
+<p>NOIP 2002 普及组第四题</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/" data-id="cuids7AxGw5jgpt8vaU8dOhLj" data-title="2026年5月12日" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2026年5月11日" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/05/11/2026%E5%B9%B45%E6%9C%8811%E6%97%A5/" class="article-date">
@@ -98,7 +813,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/11/2026%E5%B9%B45%E6%9C%8811%E6%97%A5/" data-id="cuidz519swQZupTsUARvPknsw" data-title="2026年5月11日" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2026/05/11/2026%E5%B9%B45%E6%9C%8811%E6%97%A5/" data-id="cuidSQA8ZehzB4MaF6YEsd57Y" data-title="2026年5月11日" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -149,7 +864,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/11/hello-world/" data-id="cuidtmchFwDsEbNeXjkBe1epH" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2026/05/11/hello-world/" data-id="cuidLg0FhwVukHjDUb-aacMJb" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -179,7 +894,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">七月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
     </div>
   </div>
 
@@ -192,11 +907,23 @@
       <ul>
         
           <li>
-            <a href="/2026/05/11/2026%E5%B9%B45%E6%9C%8811%E6%97%A5/">2026年5月11日</a>
+            <a href="/2026/07/11/blog/">blog</a>
           </li>
         
           <li>
-            <a href="/2026/05/11/hello-world/">Hello World</a>
+            <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/">实习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/">acm刷题</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/">排序</a>
           </li>
         
       </ul>

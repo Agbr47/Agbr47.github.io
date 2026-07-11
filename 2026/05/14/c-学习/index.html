@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>c++学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="memset设置数组内容memset1234void *memset(void * ptr,int value,size_t num);&#x2F;&#x2F;ptr -- 指针：指向了要设置的内存块的起始位置&#x2F;&#x2F;value -- 要设置的值&#x2F;&#x2F;num -- 设置的字节个数  示范： 1234char arr[]&#x3D;&quot;hello world&quot;;cout&lt;&lt;arr&lt;&lt;endl;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++学习">
+<meta property="og:url" content="http://example.com/2026/05/14/c-%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="memset设置数组内容memset1234void *memset(void * ptr,int value,size_t num);&#x2F;&#x2F;ptr -- 指针：指向了要设置的内存块的起始位置&#x2F;&#x2F;value -- 要设置的值&#x2F;&#x2F;num -- 设置的字节个数  示范： 1234char arr[]&#x3D;&quot;hello world&quot;;cout&lt;&lt;arr&lt;&lt;endl;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-14T08:56:31.000Z">
+<meta property="article:modified_time" content="2026-05-16T09:15:16.017Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-c-学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2026-05-14T08:56:31.000Z" itemprop="datePublished">2026-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      c++学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="memset设置数组内容"><a href="#memset设置数组内容" class="headerlink" title="memset设置数组内容"></a>memset设置数组内容</h1><h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">memset</span><span class="params">(<span class="type">void</span> * ptr,<span class="type">int</span> value,<span class="type">size_t</span> num)</span></span>;</span><br><span class="line"><span class="comment">//ptr -- 指针：指向了要设置的内存块的起始位置</span></span><br><span class="line"><span class="comment">//value -- 要设置的值</span></span><br><span class="line"><span class="comment">//num -- 设置的字节个数 </span></span><br></pre></td></tr></table></figure>
+<p>示范：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> arr[]=<span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">cout&lt;&lt;arr&lt;&lt;endl;</span><br><span class="line"><span class="built_in">memset</span>(arr,<span class="string">&#x27;x&#x27;</span>,<span class="number">5</span>);</span><br><span class="line">cout&lt;&lt;arr&lt;&lt;endl;<span class="comment">//xxxxx world</span></span><br></pre></td></tr></table></figure>
+<h1 id="memcpy拷贝数组内容"><a href="#memcpy拷贝数组内容" class="headerlink" title="memcpy拷贝数组内容"></a>memcpy拷贝数组内容</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="fget"><a href="#fget" class="headerlink" title="fget"></a>fget</h1><p>读取字符串时会保留\n且会自动在结尾加上\0</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fgets</span>(arr,<span class="number">20</span>,stdin);<span class="comment">//stdin 标准输入流 -- 键盘，20为字符长（包含\0）</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/14/c-%E5%AD%A6%E4%B9%A0/" data-id="cuidGMe6I12od5X01o6axqXJw" data-title="c++学习" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          实习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">acm刷题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">七月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/11/blog/">blog</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/">实习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/">acm刷题</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/">排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

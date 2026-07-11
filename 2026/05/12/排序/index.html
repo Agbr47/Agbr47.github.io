@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>排序 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="快速排序1234567891011void quick_sort(int a[], int l, int r) &#123;    if (l &gt;&#x3D; r) return;    int i &#x3D; l - 1, j &#x3D; r + 1, x &#x3D; a[(l + r) &#x2F; 2];    while (i &lt; j) &#123;        do i++; while (a[i] &lt; x);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序">
+<meta property="og:url" content="http://example.com/2026/05/12/%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="快速排序1234567891011void quick_sort(int a[], int l, int r) &#123;    if (l &gt;&#x3D; r) return;    int i &#x3D; l - 1, j &#x3D; r + 1, x &#x3D; a[(l + r) &#x2F; 2];    while (i &lt; j) &#123;        do i++; while (a[i] &lt; x);">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-12T12:38:09.000Z">
+<meta property="article:modified_time" content="2026-05-12T14:01:43.862Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T12:38:09.000Z" itemprop="datePublished">2026-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      排序
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = a[(l + r) / <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">do</span> i++; <span class="keyword">while</span> (a[i] &lt; x);</span><br><span class="line">        <span class="keyword">do</span> j--; <span class="keyword">while</span> (a[j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(a[i], a[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(a, l, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(a, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>选取中间元素作为基准值 x。使用两个指针 i 和 j，分别从数组两端向中间扫描：</p>
+<ol>
+<li>i 从左向右寻找第一个<code>大于等于</code> x 的元素；</li>
+<li>j 从右向左寻找第一个<code>小于等于</code> x 的元素。</li>
+<li>若 i &lt; j，则<code>交换</code>这两个元素，让小的去左边、大的去右边。</li>
+<li>当 i 和 j 相遇或交错后，数组被切分为左半部分（全部 ≤ x）和右半部分（全部 ≥ x），再对这两部分递归执行快速排序。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/12/%E6%8E%92%E5%BA%8F/" data-id="cuid0nKvVT-ZZcqIJCml4sitV" data-title="排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          acm刷题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">算法基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">七月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/11/blog/">blog</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/">实习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/">acm刷题</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/">排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

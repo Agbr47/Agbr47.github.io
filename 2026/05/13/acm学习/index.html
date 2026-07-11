@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>acm刷题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="P1035 [NOI2002 普及组] 级数求和题目描述已知：$S_n&#x3D; 1+\dfrac{1}{2}+\dfrac{1}{3}+…+\dfrac{1}{n}$。显然对于任意一个整数 $k$，当 $n$ 足够大的时候，$S_n&gt;k$。 现给出一个整数 $k$，要求计算出一个最小的 $n$，使得 $S_n&gt;k$。 输入格式一个正整数 $k$。 输出格式一个正整数 $n$。 输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="acm刷题">
+<meta property="og:url" content="http://example.com/2026/05/13/acm%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="P1035 [NOI2002 普及组] 级数求和题目描述已知：$S_n&#x3D; 1+\dfrac{1}{2}+\dfrac{1}{3}+…+\dfrac{1}{n}$。显然对于任意一个整数 $k$，当 $n$ 足够大的时候，$S_n&gt;k$。 现给出一个整数 $k$，要求计算出一个最小的 $n$，使得 $S_n&gt;k$。 输入格式一个正整数 $k$。 输出格式一个正整数 $n$。 输入">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-13T10:10:06.000Z">
+<meta property="article:modified_time" content="2026-05-14T08:56:07.066Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-acm学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2026-05-13T10:10:06.000Z" itemprop="datePublished">2026-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      acm刷题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="P1035-NOI2002-普及组-级数求和"><a href="#P1035-NOI2002-普及组-级数求和" class="headerlink" title="P1035 [NOI2002 普及组] 级数求和"></a>P1035 [NOI2002 普及组] 级数求和</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知：$S_n&#x3D; 1+\dfrac{1}{2}+\dfrac{1}{3}+…+\dfrac{1}{n}$。显然对于任意一个整数 $k$，当 $n$ 足够大的时候，$S_n&gt;k$。</p>
+<p>现给出一个整数 $k$，要求计算出一个最小的 $n$，使得 $S_n&gt;k$。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一个正整数 $k$。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个正整数 $n$。</p>
+<h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p><strong>【数据范围】</strong></p>
+<p>对于 $100%$ 的数据，$1\le k \le 15$。</p>
+<p><strong>【题目来源】</strong></p>
+<p>NOIP 2002 普及组第一题</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">S</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="type">double</span> sum=<span class="number">0.0</span>;</span><br><span class="line">	ll n=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(sum&lt;=k)&#123;</span><br><span class="line">        n++;</span><br><span class="line">		sum+=<span class="number">1.0</span>/n;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> k=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;k;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">S</span>(k)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>n++需要注意程序运行顺序</strong></em></p>
+<h1 id="P1047-NOIP-2005-普及组-校门外的树"><a href="#P1047-NOIP-2005-普及组-校门外的树" class="headerlink" title="P1047 [NOIP 2005 普及组] 校门外的树"></a>P1047 [NOIP 2005 普及组] 校门外的树</h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>某校大门外长度为 $l$ 的马路上有一排树，每两棵相邻的树之间的间隔都是 $1$ 米。我们可以把马路看成一个数轴，马路的一端在数轴 $0$ 的位置，另一端在 $l$ 的位置；数轴上的每个整数点，即 $0,1,2,\dots,l$，都种有一棵树。</p>
+<p>由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。</p>
+<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行有两个整数，分别表示马路的长度 $l$ 和区域的数目 $m$。</p>
+<p>接下来 $m$ 行，每行两个整数 $u, v$，表示一个区域的起始点和终止点的坐标。</p>
+<h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个整数，表示将这些树都移走后，马路上剩余的树木数量。</p>
+<h2 id="输入输出样例-1-1"><a href="#输入输出样例-1-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1-1"><a href="#输入-1-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">500 3</span><br><span class="line">150 300</span><br><span class="line">100 200</span><br><span class="line">470 471</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-1-1"><a href="#输出-1-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">298</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示-1"><a href="#说明-提示-1" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p><strong>【数据范围】</strong></p>
+<ul>
+<li>对于 $20%$ 的数据，保证区域之间没有重合的部分。</li>
+<li>对于 $100%$ 的数据，保证 $1 \leq l \leq 10^4$，$1 \leq m \leq 100$，$0 \leq u \leq v \leq l$。</li>
+</ul>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> l, m;</span><br><span class="line">    cin &gt;&gt; l &gt;&gt; m;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 树的总数是 l+1 棵，位置从 0 到 l</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">tree</span><span class="params">(l + <span class="number">1</span>, <span class="literal">true</span>)</span></span>;  <span class="comment">// true 表示树还在</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        <span class="comment">// 将区间内的树标记为 false（已移走）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = u; j &lt;= v; ++j) &#123;</span><br><span class="line">            tree[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= l; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (tree[i]) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>错解</strong></em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> m=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> l=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;l&gt;&gt;m;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt;L;</span><br><span class="line">	priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt; &gt; q;</span><br><span class="line">	priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt; &gt; z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">		<span class="type">int</span> u=<span class="number">0</span>,v=<span class="number">0</span>;</span><br><span class="line">		cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">		q.<span class="built_in">push</span>(u);</span><br><span class="line">		z.<span class="built_in">push</span>(v);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">		L.<span class="built_in">resize</span>(q.<span class="built_in">top</span>(),<span class="number">1</span>);</span><br><span class="line">		L.<span class="built_in">resize</span>(z.<span class="built_in">top</span>(),<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	L.<span class="built_in">resize</span>(l,<span class="number">1</span>);</span><br><span class="line">	<span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;l;i++)&#123;</span><br><span class="line">		sum+=L[i];</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;sum; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解释：<br>问题出在 <code>resize</code> 的作用上</p>
+<p><code>L.resize(n, val)</code> 的意思是：把 <code>L</code> 的大小直接改成 <code>n</code>。</p>
+<ul>
+<li>如果 <code>n &gt; L.size()</code>，则新增的元素全部用 <code>val</code> 填充。</li>
+<li>如果 <code>n &lt; L.size()</code>，则砍掉末尾多余的元素。</li>
+<li></li>
+</ul>
+<p>你设想的是：在区间 <code>[u, v]</code> 内把树“标记为 0”，但这里 <code>resize</code> 只会粗暴地改变整个 <code>vector</code> 的长度，并不能做到<strong>只修改中间一段</strong>的值。</p>
+<h3 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h3><p>假设 <code>l = 10</code>，区间 <code>[2,5]</code> 和 <code>[3,6]</code>。</p>
+<ul>
+<li><p><strong>第一次循环</strong>：<code>q.top() = 2</code>, <code>z.top() = 3</code><br>执行 <code>L.resize(2, 1)</code> → <code>L</code> 变成 <code>[1, 1]</code><br>执行 <code>L.resize(3, 0)</code> → <code>L</code> 变成 <code>[1, 1, 0]</code>（索引 0~2）</p>
+</li>
+<li><p><strong>第二次循环</strong>：<code>q.top() = 3</code>, <code>z.top() = 6</code><br>执行 <code>L.resize(3, 1)</code> → <code>L</code> 不变，大小已是 3，<code>[1, 1, 0]</code><br>执行 <code>L.resize(6, 0)</code> → <code>L</code> 变成 <code>[1, 1, 0, 0, 0, 0]</code></p>
+</li>
+<li><p>最后 <code>L.resize(10, 1)</code> → <code>L</code> 变成 <code>[1, 1, 0, 0, 0, 0, 1, 1, 1, 1]</code><br>统计 <code>sum = 6</code>，而正确答案应该是 4（路长 <code>l=10</code> 表示位置 0~10 共 11 棵树，这里暂且忽略细节，但显然用 <code>resize</code> 得不到正确标记）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="priority-queue-的用法问题"><a href="#priority-queue-的用法问题" class="headerlink" title="priority_queue 的用法问题"></a><code>priority_queue</code> 的用法问题</h2><p>你分别用两个最小堆来存放所有区间的起点 <code>u</code> 和终点 <code>v</code>，但这样取出的 <code>u</code> 和 <code>v</code> <strong>并不是成对的原区间</strong>，而是把所有起点和终点各自排序后再依次配对。虽然当区间无重叠或特殊情况下可能碰巧正确，但如果区间有重叠，这种“全局排序再配对”的方式会丢失区间对应关系，造成错误。</p>
+<h3 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a>举个例子</h3><p>区间 <code>[1, 10]</code> 和 <code>[2, 3]</code>  </p>
+<ul>
+<li>排序后起点：<code>1, 2</code>  </li>
+<li>排序后终点：<code>3, 10</code>  </li>
+<li>配对后变成：<code>[1, 3]</code> 和 <code>[2, 10]</code></li>
+</ul>
+<p>这会多挖掉很多树，与原始区间意义完全不同。</p>
+<p>感言：byd还是没看懂</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/13/acm%E5%AD%A6%E4%B9%A0/" data-id="cuid6Y-sBAOtEizH_hmJqR6yd" data-title="acm刷题" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          c++学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">排序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">七月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">五月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/11/blog/">blog</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/10/%E5%AE%9E%E4%B9%A0/">实习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/13/acm%E5%AD%A6%E4%B9%A0/">acm刷题</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/12/%E6%8E%92%E5%BA%8F/">排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
