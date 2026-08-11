@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML+CSS+JS · Agbr47&#39;s Blog</title>
+<meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="generator" content="Hexo">
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<body>
+  <div class="container">
+    <header class="header">
+  <a class="site-title" href="/">Agbr47&#39;s Blog</a>
+  <nav class="nav">
+    
+      <a class="nav-link" href="/">首页</a>
+    
+      <a class="nav-link" href="/archives/">归档</a>
+    
+      <a class="nav-link" href="/tags/">标签</a>
+    
+      <a class="nav-link" href="/categories/">分类</a>
+    
+      <a class="nav-link" href="/about/">关于</a>
+    
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+</header>
+
+    <main class="main">
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">HTML+CSS+JS</h1>
+    <div class="post-meta">
+      <time datetime="2026-08-10T03:19:02.000Z">2026-08-10</time>
+      
+        <span class="post-updated">· 更新于 2026-08-10</span>
+      
+      
+        <span class="card-tags">
+          
+            <a class="tag" href="/tags/HTML/">HTML</a>
+          
+            <a class="tag" href="/tags/CSS/">CSS</a>
+          
+            <a class="tag" href="/tags/JavaScript/">JavaScript</a>
+          
+            <a class="tag" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+          
+        </span>
+      
+    </div>
+  </header>
+  <div class="post-content"><h1 id="HTML-CSS-JS-入门"><a href="#HTML-CSS-JS-入门" class="headerlink" title="HTML + CSS + JS 入门"></a>HTML + CSS + JS 入门</h1><p>网页三件套，一个都不能少。它们的关系可以用<strong>盖房子</strong>来理解：</p>
+<ul>
+<li><strong>HTML</strong> &#x3D; 毛坯房的结构：墙、门、窗、房间</li>
+<li><strong>CSS</strong> &#x3D; 装修：墙纸、颜色、家具摆放</li>
+<li><strong>JS</strong> &#x3D; 水电和智能家居：灯会亮、按钮有反应、家电会联动</li>
+</ul>
+<hr>
+<h2 id="一、HTML-——-网页的骨架"><a href="#一、HTML-——-网页的骨架" class="headerlink" title="一、HTML —— 网页的骨架"></a>一、HTML —— 网页的骨架</h2><p>HTML（超文本标记语言）用<strong>标签</strong>来描述内容。绝大多数标签成对出现：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">标签名</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">标签名</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>像包裹糖果的糖纸，一个开一个合。</p>
+<h3 id="最常用的标签"><a href="#最常用的标签" class="headerlink" title="最常用的标签"></a>最常用的标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;h1&gt;</code> ~ <code>&lt;h6&gt;</code></td>
+<td>标题（从大到小）</td>
+<td><code>&lt;h1&gt;我的博客&lt;/h1&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;p&gt;</code></td>
+<td>段落</td>
+<td><code>&lt;p&gt;你好，世界&lt;/p&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;a&gt;</code></td>
+<td>链接</td>
+<td><code>&lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;img&gt;</code></td>
+<td>图片（自闭合）</td>
+<td><code>&lt;img src=&quot;photo.jpg&quot; alt=&quot;照片&quot;&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;ul&gt;</code> &#x2F; <code>&lt;li&gt;</code></td>
+<td>无序列表</td>
+<td>项目符号列表</td>
+</tr>
+<tr>
+<td><code>&lt;button&gt;</code></td>
+<td>按钮</td>
+<td><code>&lt;button&gt;点我&lt;/button&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;div&gt;</code></td>
+<td>万能容器（一块区域）</td>
+<td>用来分组、布局</td>
+</tr>
+<tr>
+<td><code>&lt;span&gt;</code></td>
+<td>行内小容器</td>
+<td>给一小段文字单独上色</td>
+</tr>
+</tbody></table>
+<h3 id="示例：一个纯-HTML-的自我介绍"><a href="#示例：一个纯-HTML-的自我介绍" class="headerlink" title="示例：一个纯 HTML 的自我介绍"></a>示例：一个纯 HTML 的自我介绍</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>我的自我介绍<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，我是 Agbr47<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>一名正在学习编程的学生。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>喜欢：算法、C++、Linux<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>在做：个人博客（就是这里）<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/Agbr47&quot;</span>&gt;</span>我的 GitHub<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>把它保存成 <code>index.html</code>，用浏览器打开，就能看到效果——纯文字，没有任何装饰，这就是<strong>毛坯房</strong>。</p>
+<hr>
+<h2 id="二、CSS-——-网页的皮肤"><a href="#二、CSS-——-网页的皮肤" class="headerlink" title="二、CSS —— 网页的皮肤"></a>二、CSS —— 网页的皮肤</h2><p>CSS（层叠样式表）负责<strong>长什么样</strong>。核心语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">  属性: 值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>意思是：”<strong>选谁</strong>，把它<strong>改成什么样</strong>“。</p>
+<h3 id="三种常见选择器"><a href="#三种常见选择器" class="headerlink" title="三种常见选择器"></a>三种常见选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 标签选择器：选中所有 &lt;p&gt; */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* class 选择器：选中所有 class=&quot;highlight&quot; 的元素（最常用） */</span></span><br><span class="line"><span class="selector-class">.highlight</span> &#123; <span class="attribute">background</span>: yellow; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* id 选择器：选中 id=&quot;logo&quot; 的那个元素（页面里唯一） */</span></span><br><span class="line"><span class="selector-id">#logo</span> &#123; <span class="attribute">font-size</span>: <span class="number">30px</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用属性速览"><a href="#常用属性速览" class="headerlink" title="常用属性速览"></a>常用属性速览</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff92c2</span>;            <span class="comment">/* 文字颜色（樱花粉） */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#0d1017</span>;       <span class="comment">/* 背景色（深色） */</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;           <span class="comment">/* 字号 */</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ff92c2</span>; <span class="comment">/* 1px 粉色边框 */</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">16px</span>;       <span class="comment">/* 圆角（越大越圆） */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;             <span class="comment">/* 内边距：内容和边框之间的空隙 */</span></span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;              <span class="comment">/* 外边距：元素和外面东西的空隙 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>盒子模型</strong>一句话：每个元素都是一个盒子，从外到里是 <code>margin</code>（外边距）→ <code>border</code>（边框）→ <code>padding</code>（内边距）→ <code>内容</code>。</p>
+<h3 id="示例：给自我介绍加上樱花粉装修"><a href="#示例：给自我介绍加上樱花粉装修" class="headerlink" title="示例：给自我介绍加上樱花粉装修"></a>示例：给自我介绍加上樱花粉装修</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background</span>: <span class="number">#ffeef4</span>;          <span class="comment">/* 浅粉背景 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-family</span>: sans-serif;      <span class="comment">/* 字体 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.card</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background</span>: white;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#ff92c2</span>;    <span class="comment">/* 粉色边框 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">border-radius</span>: <span class="number">16px</span>;          <span class="comment">/* 圆角卡片 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">24px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">max-width</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">40px</span> auto;            <span class="comment">/* 居中 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">20px</span> <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">146</span>, <span class="number">194</span>, <span class="number">0.3</span>); <span class="comment">/* 粉色阴影 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.card</span> <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#ed81b0</span>; &#125;    <span class="comment">/* 标题粉色 */</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，我是 Agbr47<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>一名正在学习编程的学生。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/Agbr47&quot;</span>&gt;</span>我的 GitHub<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>同样是自我介绍，加上 CSS 就像从毛坯房搬进了精装修。<strong>这就是你博客主题（sakura 主题）在做的事</strong>：<code>themes/sakura/source/css/style.css</code> 里全是这种规则。</p>
+<hr>
+<h2 id="三、JavaScript-——-网页的大脑"><a href="#三、JavaScript-——-网页的大脑" class="headerlink" title="三、JavaScript —— 网页的大脑"></a>三、JavaScript —— 网页的大脑</h2><p>JS 让页面<strong>动起来、有反应</strong>。三个最基础的概念：</p>
+<h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;Agbr47&#x27;</span>;        <span class="comment">// let：可以重新赋值</span></span><br><span class="line"><span class="keyword">const</span> site = <span class="string">&#x27;我的博客&#x27;</span>;     <span class="comment">// const：不能改的常量</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">count = count + <span class="number">1</span>;          <span class="comment">// 变成 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-函数"><a href="#2-函数" class="headerlink" title="2. 函数"></a>2. 函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params">who</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;你好，&#x27;</span> + who;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sayHello</span>(<span class="string">&#x27;世界&#x27;</span>);   <span class="comment">// 返回 &#x27;你好，世界&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-事件-DOM（改页面内容）"><a href="#3-事件-DOM（改页面内容）" class="headerlink" title="3. 事件 + DOM（改页面内容）"></a>3. 事件 + DOM（改页面内容）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 找到 id=&quot;btn&quot; 的按钮</span></span><br><span class="line"><span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听&quot;点击&quot;事件</span></span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&#x27;#0d1017&#x27;</span>;  <span class="comment">// 把页面背景改成深色</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>document.getElementById(...)</code> 是”<strong>去页面里找元素</strong>“，改它的 <code>style</code>、<code>textContent</code> 就是”<strong>操作页面</strong>“。前端最核心的动作就是这两步：<strong>找到它，改它</strong>。</p>
+<h3 id="示例：点击按钮切换昼夜"><a href="#示例：点击按钮切换昼夜" class="headerlink" title="示例：点击按钮切换昼夜"></a>示例：点击按钮切换昼夜</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>切换到深色<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">let</span> isDark = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    isDark = !isDark;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = isDark ? <span class="string">&#x27;#0d1017&#x27;</span> : <span class="string">&#x27;#ffeef4&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">textContent</span> = isDark ? <span class="string">&#x27;切回浅色&#x27;</span> : <span class="string">&#x27;切换到深色&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>保存运行，点一下按钮，页面就在深色和浅色之间切换——就像你博客右上角的那个 🌙 按钮（<code>themes/sakura/source/js/main.js</code> 里就是类似的逻辑）。</p>
+<hr>
+<h2 id="四、综合示例：一个完整的樱花粉页面"><a href="#四、综合示例：一个完整的樱花粉页面" class="headerlink" title="四、综合示例：一个完整的樱花粉页面"></a>四、综合示例：一个完整的樱花粉页面</h2><p>把三件套合在一起，这就是一个”迷你 sakura”页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>樱花粉小页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background</span>: <span class="number">#ffeef4</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-family</span>: sans-serif;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">min-height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">transition</span>: background <span class="number">0.3s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.card</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background</span>: white;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#ff92c2</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border-radius</span>: <span class="number">16px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">24px</span> <span class="number">32px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">20px</span> <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">146</span>, <span class="number">194</span>, <span class="number">0.3</span>);</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.card</span> <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#ed81b0</span>; &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.card</span> <span class="selector-tag">button</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background</span>: <span class="number">#ff92c2</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border</span>: none;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border-radius</span>: <span class="number">9999px</span>;   <span class="comment">/* 胶囊按钮，和主题一致 */</span></span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">16px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">cursor</span>: pointer;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-top</span>: <span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，我是 Agbr47<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>点按钮切换主题<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>切换到深色<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> isDark = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      isDark = !isDark;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = isDark ? <span class="string">&#x27;#0d1017&#x27;</span> : <span class="string">&#x27;#ffeef4&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">      btn.<span class="property">textContent</span> = isDark ? <span class="string">&#x27;切回浅色&#x27;</span> : <span class="string">&#x27;切换到深色&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>怎么运行</strong>：复制上面的代码，保存成 <code>demo.html</code>，双击用浏览器打开即可，不需要装任何东西。</p>
+<hr>
+<h2 id="五、接下来怎么学"><a href="#五、接下来怎么学" class="headerlink" title="五、接下来怎么学"></a>五、接下来怎么学</h2><ol>
+<li><strong>改着玩</strong>：把示例里的颜色、文字、按钮改成你自己的，改一处刷新一次看效果</li>
+<li><strong>按 F12</strong>：在浏览器按 F12 打开开发者工具 → 元素&#x2F;样式面板，能看到任意网页的结构和 CSS，甚至临时改着玩（刷新还原）</li>
+<li><strong>看你的主题源码</strong>：<code>themes/sakura/</code> 里就是这三样——<code>.ejs</code>（模板，最终渲染成 HTML）、<code>style.css</code>、<code>main.js</code>，正好是活教材</li>
+</ol>
+<p>一句话收尾：<strong>HTML 管”有什么”，CSS 管”长什么样”，JS 管”会做什么”</strong>。三者叠加，就是你每天浏览的网页。</p>
+</div>
+  <nav class="post-nav">
+    
+      <span></span>
+    
+    
+      <a class="post-nav-link next" href="/2026/07/11/Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">Linux服务器搭建 →</a>
+    
+  </nav>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2026 Agbr47 · Powered by
+    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> · sakura 主题
+  </p>
+</footer>
+
+  </div>
+  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
+  <script src="/js/main.js"></script>
+</body>
+</html>

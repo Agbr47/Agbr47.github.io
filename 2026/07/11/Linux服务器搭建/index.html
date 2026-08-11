@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux服务器搭建 · Agbr47&#39;s Blog</title>
+<meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="generator" content="Hexo">
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<body>
+  <div class="container">
+    <header class="header">
+  <a class="site-title" href="/">Agbr47&#39;s Blog</a>
+  <nav class="nav">
+    
+      <a class="nav-link" href="/">首页</a>
+    
+      <a class="nav-link" href="/archives/">归档</a>
+    
+      <a class="nav-link" href="/tags/">标签</a>
+    
+      <a class="nav-link" href="/categories/">分类</a>
+    
+      <a class="nav-link" href="/about/">关于</a>
+    
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+</header>
+
+    <main class="main">
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Linux服务器搭建</h1>
+    <div class="post-meta">
+      <time datetime="2026-07-11T14:11:35.000Z">2026-07-11</time>
+      
+        <span class="post-updated">· 更新于 2026-07-11</span>
+      
+      
+    </div>
+  </header>
+  <div class="post-content"><h1 id="Linux-常用命令速查"><a href="#Linux-常用命令速查" class="headerlink" title="Linux 常用命令速查"></a>Linux 常用命令速查</h1><h2 id="📁-文件与目录"><a href="#📁-文件与目录" class="headerlink" title="📁 文件与目录"></a>📁 文件与目录</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ls</code></td>
+<td>列出目录内容</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>显示当前路径</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>删除文件&#x2F;目录</td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>复制文件&#x2F;目录</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>移动或重命名</td>
+</tr>
+<tr>
+<td><code>touch</code></td>
+<td>创建空文件</td>
+</tr>
+<tr>
+<td><code>find</code></td>
+<td>查找文件</td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td>树状显示目录</td>
+</tr>
+</tbody></table>
+<h2 id="📝-文本处理"><a href="#📝-文本处理" class="headerlink" title="📝 文本处理"></a>📝 文本处理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cat</code></td>
+<td>显示文件内容</td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td>分页浏览文件</td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td>查看文件头部</td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>查看文件尾部</td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>文本搜索</td>
+</tr>
+<tr>
+<td><code>sed</code></td>
+<td>流式文本编辑</td>
+</tr>
+<tr>
+<td><code>awk</code></td>
+<td>文本分析处理</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>uniq</code></td>
+<td>去重</td>
+</tr>
+<tr>
+<td><code>wc</code></td>
+<td>统计行数&#x2F;字数</td>
+</tr>
+<tr>
+<td><code>diff</code></td>
+<td>比较文件差异</td>
+</tr>
+</tbody></table>
+<h2 id="⚙️-系统管理"><a href="#⚙️-系统管理" class="headerlink" title="⚙️ 系统管理"></a>⚙️ 系统管理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>top</code> &#x2F; <code>htop</code></td>
+<td>动态进程监控</td>
+</tr>
+<tr>
+<td><code>ps</code></td>
+<td>查看进程快照</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>终止进程</td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td>查看磁盘使用</td>
+</tr>
+<tr>
+<td><code>du</code></td>
+<td>查看目录大小</td>
+</tr>
+<tr>
+<td><code>free</code></td>
+<td>查看内存</td>
+</tr>
+<tr>
+<td><code>uname</code></td>
+<td>系统信息</td>
+</tr>
+<tr>
+<td><code>lsblk</code></td>
+<td>列出块设备</td>
+</tr>
+<tr>
+<td><code>dmesg</code></td>
+<td>内核日志</td>
+</tr>
+<tr>
+<td><code>systemctl</code></td>
+<td>管理服务</td>
+</tr>
+</tbody></table>
+<h2 id="🌐-网络"><a href="#🌐-网络" class="headerlink" title="🌐 网络"></a>🌐 网络</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ping</code></td>
+<td>测试连通性</td>
+</tr>
+<tr>
+<td><code>curl</code></td>
+<td>网络请求&#x2F;下载</td>
+</tr>
+<tr>
+<td><code>wget</code></td>
+<td>下载文件</td>
+</tr>
+<tr>
+<td><code>ss</code></td>
+<td>查看端口&#x2F;连接</td>
+</tr>
+<tr>
+<td><code>ip</code></td>
+<td>网络配置</td>
+</tr>
+<tr>
+<td><code>dig</code></td>
+<td>DNS 查询</td>
+</tr>
+<tr>
+<td><code>ssh</code></td>
+<td>安全远程登录</td>
+</tr>
+<tr>
+<td><code>scp</code></td>
+<td>远程拷贝</td>
+</tr>
+</tbody></table>
+<h2 id="🔐-权限与用户"><a href="#🔐-权限与用户" class="headerlink" title="🔐 权限与用户"></a>🔐 权限与用户</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>chmod</code></td>
+<td>修改权限</td>
+</tr>
+<tr>
+<td><code>chown</code></td>
+<td>修改所有者</td>
+</tr>
+<tr>
+<td><code>sudo</code></td>
+<td>提升权限执行</td>
+</tr>
+<tr>
+<td><code>su</code></td>
+<td>切换用户</td>
+</tr>
+</tbody></table>
+<h2 id="📦-包管理"><a href="#📦-包管理" class="headerlink" title="📦 包管理"></a>📦 包管理</h2><table>
+<thead>
+<tr>
+<th>发行版</th>
+<th>命令示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Debian&#x2F;Ubuntu</td>
+<td><code>apt install</code> &#x2F; <code>apt remove</code></td>
+</tr>
+<tr>
+<td>RHEL&#x2F;Fedora</td>
+<td><code>dnf install</code></td>
+</tr>
+<tr>
+<td>Arch</td>
+<td><code>pacman -S</code></td>
+</tr>
+</tbody></table>
+<h2 id="🗜️-压缩归档"><a href="#🗜️-压缩归档" class="headerlink" title="🗜️ 压缩归档"></a>🗜️ 压缩归档</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tar</code></td>
+<td>归档&#x2F;压缩&#x2F;解压</td>
+</tr>
+<tr>
+<td><code>gzip</code></td>
+<td>压缩为 .gz</td>
+</tr>
+<tr>
+<td><code>zip</code></td>
+<td>跨平台压缩</td>
+</tr>
+</tbody></table>
+<h2 id="🛠️-其他"><a href="#🛠️-其他" class="headerlink" title="🛠️ 其他"></a>🛠️ 其他</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>echo</code></td>
+<td>输出文本</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>显示日期</td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>命令历史</td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>设置别名</td>
+</tr>
+<tr>
+<td><code>man</code></td>
+<td>查看命令手册</td>
+</tr>
+</tbody></table>
+</div>
+  <nav class="post-nav">
+    
+      <a class="post-nav-link prev" href="/2026/08/10/HTML-CSS-JS/">← HTML+CSS+JS</a>
+    
+    
+      <a class="post-nav-link next" href="/2026/07/11/blog/">blog →</a>
+    
+  </nav>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2026 Agbr47 · Powered by
+    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> · sakura 主题
+  </p>
+</footer>
+
+  </div>
+  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
+  <script src="/js/main.js"></script>
+</body>
+</html>
