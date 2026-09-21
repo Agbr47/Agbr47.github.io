@@ -1,42 +1,117 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e14">
 <title>关于 · Agbr47&#39;s Blog</title>
 <meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="author" content="Agbr47">
 <meta name="generator" content="Hexo">
+
+<meta name="keywords" content="算法,C++,Linux">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于 · Agbr47&#39;s Blog">
+<meta property="og:description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta property="og:site_name" content="Agbr47&#39;s Blog">
+<meta property="og:url" content="https://agbr47.github.io/about/index.html">
+
+
 
 <link rel="stylesheet" href="/css/style.css">
 
 
+<style>
+  :root {
+    --container-w: 1200px;
+    --toc-w: 250px;
+  }
+</style>
+<script>
+  // 这段必须在首屏渲染前跑，否则会看到「完整内容 → 重播动画」的闪烁
+  (function () {
+    var root = document.documentElement;
+    var theme = 'dark';
+
+    try {
+      theme =
+        localStorage.getItem('sakura-theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'light'
+          : 'dark');
+    } catch (e) {
+      /* localStorage 不可用时默认深色 */
+    }
+    root.setAttribute('data-theme', theme);
+
+    // 只有「配置开了动效」且「系统没要求减少动态效果」时才挂 has-motion。
+    // 所有入场动画都写在 .has-motion 下面，所以脚本一旦失效，内容照样完整可见。
+    var reduce =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && true) root.classList.add('has-motion');
+  })();
+</script>
+<script>
+  window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
+</script>
 </head>
-<body>
-  <div class="container">
-    <header class="header">
-  <a class="site-title" href="/">Agbr47&#39;s Blog</a>
-  <nav class="nav">
-    
-      <a class="nav-link" href="/">首页</a>
-    
-      <a class="nav-link" href="/archives/">归档</a>
-    
-      <a class="nav-link" href="/tags/">标签</a>
-    
-      <a class="nav-link" href="/categories/">分类</a>
-    
-      <a class="nav-link" href="/about/">关于</a>
-    
-  </nav>
-  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+<body class="site is-page">
+  <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
+  
+    <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+  
+
+  
+
+  <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      
+        <span class="brand-mark" aria-hidden="true">✿</span>
+      
+      <span class="brand-text">
+        <span class="brand-title">Agbr47&#39;s Blog</span>
+        <span class="brand-sub">sakura</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+        <a class="nav-link" href="/">首页</a>
+      
+        <a class="nav-link" href="/photos/">相册</a>
+      
+        <a class="nav-link" href="/archives/">归档</a>
+      
+        <a class="nav-link" href="/tags/">标签</a>
+      
+        <a class="nav-link" href="/categories/">分类</a>
+      
+        <a class="nav-link is-active" href="/about/">关于</a>
+      
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色主题">🌙</button>
+  </div>
 </header>
 
-    <main class="main">
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">关于</h1>
-  </header>
-  <div class="post-content"><h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>这里是 Agbr47 的个人博客，主要记录：</p>
+  <div class="container page">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <main class="main" id="main">
+
+  <article class="post post-single">
+    <header class="post-header">
+      <h1 class="post-title">关于</h1>
+      
+        <div class="post-meta">
+          <time datetime="2026-08-09T16:00:00.000Z">2026-08-10</time>
+        </div>
+      
+    </header>
+    <div class="post-content"><h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>这里是 Agbr47 的个人博客，主要记录：</p>
 <ul>
 <li><strong>算法学习</strong>（ACM、排序、数据结构与算法基础）</li>
 <li><strong>编程语言</strong>（C++ 等）</li>
@@ -48,17 +123,36 @@
 <p>本站使用自研 sakura 主题，与桌面美化项目 my_sakura 同一套视觉语言（樱花粉 · 深色底 · 圆角胶囊）。</p>
 </blockquote>
 </div>
-</article>
-
-    </main>
+  </article>
+</main>
     <footer class="footer">
-  <p>© 2026 Agbr47 · Powered by
-    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> · sakura 主题
+  <p class="footer-line">
+    © 2026 Agbr47 · <span class="footer-accent">sakura</span>
+  </p>
+  <p class="footer-line footer-dim">
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
   </p>
 </footer>
-
   </div>
-  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
-  <script src="/js/main.js"></script>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">↑</button>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片查看器">
+  <div class="lb-backdrop"></div>
+
+  <button class="lb-btn lb-close" type="button" aria-label="关闭 (Esc)">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一张 (←)">‹</button>
+
+  <figure class="lb-stage">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+
+  <button class="lb-btn lb-next" type="button" aria-label="下一张 (→)">›</button>
+  <div class="lb-counter" aria-hidden="true"></div>
+</div>
+  <script src="/js/main.js" defer></script>
+  
+    <script src="/js/petals.js" defer></script>
+  
 </body>
 </html>

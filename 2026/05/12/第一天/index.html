@@ -1,49 +1,140 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e14">
 <title>2026年5月12日 · Agbr47&#39;s Blog</title>
 <meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="author" content="Agbr47">
 <meta name="generator" content="Hexo">
+
+<meta name="keywords" content="算法,C++,Linux">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026年5月12日 · Agbr47&#39;s Blog">
+<meta property="og:description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta property="og:site_name" content="Agbr47&#39;s Blog">
+<meta property="og:url" content="https://agbr47.github.io/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/">
+
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/ipmwl52i.png">
+
+
 
 <link rel="stylesheet" href="/css/style.css">
 
 
+<style>
+  :root {
+    --container-w: 1200px;
+    --toc-w: 250px;
+  }
+</style>
+<script>
+  // 这段必须在首屏渲染前跑，否则会看到「完整内容 → 重播动画」的闪烁
+  (function () {
+    var root = document.documentElement;
+    var theme = 'dark';
+
+    try {
+      theme =
+        localStorage.getItem('sakura-theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'light'
+          : 'dark');
+    } catch (e) {
+      /* localStorage 不可用时默认深色 */
+    }
+    root.setAttribute('data-theme', theme);
+
+    // 只有「配置开了动效」且「系统没要求减少动态效果」时才挂 has-motion。
+    // 所有入场动画都写在 .has-motion 下面，所以脚本一旦失效，内容照样完整可见。
+    var reduce =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && true) root.classList.add('has-motion');
+  })();
+</script>
+<script>
+  window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
+</script>
 </head>
-<body>
-  <div class="container">
-    <header class="header">
-  <a class="site-title" href="/">Agbr47&#39;s Blog</a>
-  <nav class="nav">
-    
-      <a class="nav-link" href="/">首页</a>
-    
-      <a class="nav-link" href="/archives/">归档</a>
-    
-      <a class="nav-link" href="/tags/">标签</a>
-    
-      <a class="nav-link" href="/categories/">分类</a>
-    
-      <a class="nav-link" href="/about/">关于</a>
-    
-  </nav>
-  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+<body class="site is-post">
+  <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
+  
+    <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+  
+
+  
+    <div class="progress" id="progress-bar" aria-hidden="true"></div>
+  
+
+  <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      
+        <span class="brand-mark" aria-hidden="true">✿</span>
+      
+      <span class="brand-text">
+        <span class="brand-title">Agbr47&#39;s Blog</span>
+        <span class="brand-sub">sakura</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+        <a class="nav-link" href="/">首页</a>
+      
+        <a class="nav-link" href="/photos/">相册</a>
+      
+        <a class="nav-link" href="/archives/">归档</a>
+      
+        <a class="nav-link" href="/tags/">标签</a>
+      
+        <a class="nav-link" href="/categories/">分类</a>
+      
+        <a class="nav-link" href="/about/">关于</a>
+      
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色主题">🌙</button>
+  </div>
 </header>
 
-    <main class="main">
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">2026年5月12日</h1>
-    <div class="post-meta">
-      <time datetime="2026-05-12T10:26:41.000Z">2026-05-12</time>
+  <div class="container page">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <main class="main" id="main">
+<div class="post-layout has-toc">
+  <article class="post">
+    
+      <div class="post-cover"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ipmwl52i.png" alt="" decoding="async"></div>
+    
+
+    <header class="post-header">
+      <h1 class="post-title">2026年5月12日</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-05-12T10:26:41.000Z">2026-05-12</time>
+        
+          <span class="meta-sep">·</span><span>更新于 2026-05-12</span>
+        
+        
+          <span class="meta-sep">·</span><span>约 1 分钟</span>
+        
+      </div>
+
       
-        <span class="post-updated">· 更新于 2026-05-12</span>
-      
-      
-    </div>
-  </header>
-  <div class="post-content"><h1 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h1><p>我想从今天开始学算法不知道能不能速成qaq</p>
+    </header>
+
+    
+      <details class="toc-inline">
+        <summary>文章目录</summary>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%B2%E8%81%8A"><span class="toc-text">闲聊</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P1000%E8%B6%85%E7%BA%A7%E7%8E%9B%E4%B8%BD%E6%B8%B8%E6%88%8F"><span class="toc-text">P1000超级玛丽游戏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P1002%E8%BF%87%E6%B2%B3%E5%8D%92"><span class="toc-text">P1002过河卒</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="toc-text">输入输出样例 #1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-1"><span class="toc-text">输入 #1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-1"><span class="toc-text">输出 #1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E-%E6%8F%90%E7%A4%BA"><span class="toc-text">说明&#x2F;提示</span></a></li></ol></li></ol>
+      </details>
+    
+
+    <div class="post-content"><h1 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h1><p>我想从今天开始学算法不知道能不能速成qaq</p>
 <h1 id="P1000超级玛丽游戏"><a href="#P1000超级玛丽游戏" class="headerlink" title="P1000超级玛丽游戏"></a>P1000超级玛丽游戏</h1><pre><code>何意味
 请你用字符画的形式输出超级玛丽中的一个场景：
                 ********
@@ -83,25 +174,61 @@ byd缩放示例变形了
 <p><strong>【题目来源】</strong></p>
 <p>NOIP 2002 普及组第四题</p>
 </div>
-  <nav class="post-nav">
-    
-      <a class="post-nav-link prev" href="/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/">← 算法基础</a>
-    
-    
-      <a class="post-nav-link next" href="/2026/05/11/2026%E5%B9%B45%E6%9C%8811%E6%97%A5/">2026年5月11日 →</a>
-    
-  </nav>
-</article>
 
-    </main>
+    <nav class="post-nav" aria-label="上下篇">
+      
+        <a class="post-nav-link" href="/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/">
+          <span class="post-nav-label">← 上一篇</span>
+          <span class="post-nav-title">算法基础</span>
+        </a>
+      
+
+      
+        <a class="post-nav-link is-next" href="/2026/05/11/2026%E5%B9%B45%E6%9C%8811%E6%97%A5/">
+          <span class="post-nav-label">下一篇 →</span>
+          <span class="post-nav-title">2026年5月11日</span>
+        </a>
+      
+    </nav>
+  </article>
+
+  
+    <aside class="toc-aside" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-heading">目录</p>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%B2%E8%81%8A"><span class="toc-text">闲聊</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P1000%E8%B6%85%E7%BA%A7%E7%8E%9B%E4%B8%BD%E6%B8%B8%E6%88%8F"><span class="toc-text">P1000超级玛丽游戏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P1002%E8%BF%87%E6%B2%B3%E5%8D%92"><span class="toc-text">P1002过河卒</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="toc-text">输入输出样例 #1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5-1"><span class="toc-text">输入 #1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-1"><span class="toc-text">输出 #1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E-%E6%8F%90%E7%A4%BA"><span class="toc-text">说明&#x2F;提示</span></a></li></ol></li></ol>
+      </div>
+    </aside>
+  
+</div></main>
     <footer class="footer">
-  <p>© 2026 Agbr47 · Powered by
-    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> · sakura 主题
+  <p class="footer-line">
+    © 2026 Agbr47 · <span class="footer-accent">sakura</span>
+  </p>
+  <p class="footer-line footer-dim">
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
   </p>
 </footer>
-
   </div>
-  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
-  <script src="/js/main.js"></script>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">↑</button>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片查看器">
+  <div class="lb-backdrop"></div>
+
+  <button class="lb-btn lb-close" type="button" aria-label="关闭 (Esc)">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一张 (←)">‹</button>
+
+  <figure class="lb-stage">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+
+  <button class="lb-btn lb-next" type="button" aria-label="下一张 (→)">›</button>
+  <div class="lb-counter" aria-hidden="true"></div>
+</div>
+  <script src="/js/main.js" defer></script>
+  
+    <script src="/js/petals.js" defer></script>
+  
 </body>
 </html>

@@ -1,49 +1,140 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e14">
 <title>实习 · Agbr47&#39;s Blog</title>
 <meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="author" content="Agbr47">
 <meta name="generator" content="Hexo">
+
+<meta name="keywords" content="算法,C++,Linux">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习 · Agbr47&#39;s Blog">
+<meta property="og:description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta property="og:site_name" content="Agbr47&#39;s Blog">
+<meta property="og:url" content="https://agbr47.github.io/2026/07/10/%E5%AE%9E%E4%B9%A0/">
+
+<meta property="og:image" content="https://agbr47.github.io/f3b2fa97ae4535413980672a56b79ccd.pn">
+
+
 
 <link rel="stylesheet" href="/css/style.css">
 
 
+<style>
+  :root {
+    --container-w: 1200px;
+    --toc-w: 250px;
+  }
+</style>
+<script>
+  // 这段必须在首屏渲染前跑，否则会看到「完整内容 → 重播动画」的闪烁
+  (function () {
+    var root = document.documentElement;
+    var theme = 'dark';
+
+    try {
+      theme =
+        localStorage.getItem('sakura-theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'light'
+          : 'dark');
+    } catch (e) {
+      /* localStorage 不可用时默认深色 */
+    }
+    root.setAttribute('data-theme', theme);
+
+    // 只有「配置开了动效」且「系统没要求减少动态效果」时才挂 has-motion。
+    // 所有入场动画都写在 .has-motion 下面，所以脚本一旦失效，内容照样完整可见。
+    var reduce =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && true) root.classList.add('has-motion');
+  })();
+</script>
+<script>
+  window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
+</script>
 </head>
-<body>
-  <div class="container">
-    <header class="header">
-  <a class="site-title" href="/">Agbr47&#39;s Blog</a>
-  <nav class="nav">
-    
-      <a class="nav-link" href="/">首页</a>
-    
-      <a class="nav-link" href="/archives/">归档</a>
-    
-      <a class="nav-link" href="/tags/">标签</a>
-    
-      <a class="nav-link" href="/categories/">分类</a>
-    
-      <a class="nav-link" href="/about/">关于</a>
-    
-  </nav>
-  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+<body class="site is-post">
+  <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
+  
+    <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+  
+
+  
+    <div class="progress" id="progress-bar" aria-hidden="true"></div>
+  
+
+  <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      
+        <span class="brand-mark" aria-hidden="true">✿</span>
+      
+      <span class="brand-text">
+        <span class="brand-title">Agbr47&#39;s Blog</span>
+        <span class="brand-sub">sakura</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+        <a class="nav-link" href="/">首页</a>
+      
+        <a class="nav-link" href="/photos/">相册</a>
+      
+        <a class="nav-link" href="/archives/">归档</a>
+      
+        <a class="nav-link" href="/tags/">标签</a>
+      
+        <a class="nav-link" href="/categories/">分类</a>
+      
+        <a class="nav-link" href="/about/">关于</a>
+      
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色主题">🌙</button>
+  </div>
 </header>
 
-    <main class="main">
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">实习</h1>
-    <div class="post-meta">
-      <time datetime="2026-07-10T07:53:46.000Z">2026-07-10</time>
+  <div class="container page">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <main class="main" id="main">
+<div class="post-layout has-toc">
+  <article class="post">
+    
+      <div class="post-cover"><img src="/f3b2fa97ae4535413980672a56b79ccd.pn" alt="" decoding="async"></div>
+    
+
+    <header class="post-header">
+      <h1 class="post-title">实习</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-07-10T07:53:46.000Z">2026-07-10</time>
+        
+          <span class="meta-sep">·</span><span>更新于 2026-07-15</span>
+        
+        
+          <span class="meta-sep">·</span><span>约 8 分钟</span>
+        
+      </div>
+
       
-        <span class="post-updated">· 更新于 2026-07-15</span>
-      
-      
-    </div>
-  </header>
-  <div class="post-content"><h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><p>太傻逼了这个地方</p>
+    </header>
+
+    
+      <details class="toc-inline">
+        <summary>文章目录</summary>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="toc-text">第一天</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9"><span class="toc-text">第二天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2Qt%E5%AD%A6%E4%B9%A0"><span class="toc-text">2.2Qt学习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-text">第二天学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-1-Git-Gitee-%E5%AD%A6%E4%B9%A0"><span class="toc-text">2.1 Git &#x2F; Gitee 学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-Git-Gitee%EF%BC%9F"><span class="toc-text">1. 为什么使用 Git&#x2F;Gitee？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Git-%E4%B8%8E-SVN-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2. Git 与 SVN 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SVN%EF%BC%88%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-text">SVN（集中式版本控制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-text">Git（分布式版本控制）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitLab%E3%80%81GitHub%E3%80%81Gitee"><span class="toc-text">3. GitLab、GitHub、Gitee</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-text">4. 使用流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85-Git"><span class="toc-text">第一步：安装 Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%B3%A8%E5%86%8C-Gitee-%E8%B4%A6%E5%8F%B7"><span class="toc-text">第二步：注册 Gitee 账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E4%BD%BF%E7%94%A8-Git-%E5%91%BD%E4%BB%A4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE"><span class="toc-text">第三步：使用 Git 命令管理项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">5. Git 常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="toc-text">（1）初始化仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%9F%A5%E7%9C%8B%E4%BB%93%E5%BA%93%E7%8A%B6%E6%80%81"><span class="toc-text">（2）查看仓库状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-text">（3）添加到暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-text">（4）提交到本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">（5）关联远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%886%EF%BC%89%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">（6）推送到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%887%EF%BC%89%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="toc-text">（7）克隆仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%888%EF%BC%89%E6%8B%89%E5%8F%96%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">（8）拉取最新代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%889%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="toc-text">（9）查看分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8810%EF%BC%89%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-text">（10）创建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8811%EF%BC%89%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-text">（11）切换分支（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8812%EF%BC%89%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%88%E6%97%A7%E5%91%BD%E4%BB%A4%EF%BC%89"><span class="toc-text">（12）切换分支（旧命令）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8813%EF%BC%89%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-text">（13）合并分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8814%EF%BC%89%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">（14）查看提交记录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Git-%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">6. Git 基本工作流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">7. 实际开发中遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%86%B2%E7%AA%81%EF%BC%88Merge-Conflict%EF%BC%89"><span class="toc-text">版本冲突（Merge Conflict）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Git-%E5%88%86%E6%94%AF%EF%BC%88Branch%EF%BC%89"><span class="toc-text">8. Git 分支（Branch）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-2-Qt-%E5%AD%A6%E4%B9%A0"><span class="toc-text">2.2 Qt 学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Qt-%E4%BB%8B%E7%BB%8D"><span class="toc-text">1. Qt 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">2. 操作系统相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%EF%BC%88Process%EF%BC%89"><span class="toc-text">进程（Process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89"><span class="toc-text">线程（Thread）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">多线程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Qt-%E7%89%88%E6%9C%AC"><span class="toc-text">3. Qt 版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Qt-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">4. Qt 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Qt-%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-text">5. Qt 项目开发流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E6%80%BB%E7%BB%93"><span class="toc-text">今日总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%A4%A9"><span class="toc-text">第三天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Qt%E5%9F%BA%E7%A1%80"><span class="toc-text">Qt基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-text">源文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Qt%E5%AF%B9%E8%B1%A1%E6%A0%91"><span class="toc-text">Qt对象树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%A4%A9"><span class="toc-text">第四天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">4.1定时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-text">4.2文件读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="toc-text">4.3网络编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%A4%A9"><span class="toc-text">第五天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%B6%E4%BD%9C"><span class="toc-text">项目制作</span></a></li></ol></li></ol></li></ol>
+      </details>
+    
+
+    <div class="post-content"><h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><p>太傻逼了这个地方</p>
 <p>跟你妈牢房似的</p>
 <p>还要待14天</p>
 <p>真死🐎了</p>
@@ -426,25 +517,61 @@
 <li></li>
 </ul>
 </div>
-  <nav class="post-nav">
-    
-      <a class="post-nav-link prev" href="/2026/07/11/blog/">← blog</a>
-    
-    
-      <a class="post-nav-link next" href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">c++学习 →</a>
-    
-  </nav>
-</article>
 
-    </main>
+    <nav class="post-nav" aria-label="上下篇">
+      
+        <a class="post-nav-link" href="/2026/07/11/blog/">
+          <span class="post-nav-label">← 上一篇</span>
+          <span class="post-nav-title">blog</span>
+        </a>
+      
+
+      
+        <a class="post-nav-link is-next" href="/2026/05/14/c-%E5%AD%A6%E4%B9%A0/">
+          <span class="post-nav-label">下一篇 →</span>
+          <span class="post-nav-title">c++学习</span>
+        </a>
+      
+    </nav>
+  </article>
+
+  
+    <aside class="toc-aside" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-heading">目录</p>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="toc-text">第一天</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9"><span class="toc-text">第二天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2Qt%E5%AD%A6%E4%B9%A0"><span class="toc-text">2.2Qt学习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-text">第二天学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-1-Git-Gitee-%E5%AD%A6%E4%B9%A0"><span class="toc-text">2.1 Git &#x2F; Gitee 学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-Git-Gitee%EF%BC%9F"><span class="toc-text">1. 为什么使用 Git&#x2F;Gitee？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Git-%E4%B8%8E-SVN-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2. Git 与 SVN 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SVN%EF%BC%88%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-text">SVN（集中式版本控制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-text">Git（分布式版本控制）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitLab%E3%80%81GitHub%E3%80%81Gitee"><span class="toc-text">3. GitLab、GitHub、Gitee</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-text">4. 使用流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85-Git"><span class="toc-text">第一步：安装 Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%B3%A8%E5%86%8C-Gitee-%E8%B4%A6%E5%8F%B7"><span class="toc-text">第二步：注册 Gitee 账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E4%BD%BF%E7%94%A8-Git-%E5%91%BD%E4%BB%A4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE"><span class="toc-text">第三步：使用 Git 命令管理项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">5. Git 常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="toc-text">（1）初始化仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%9F%A5%E7%9C%8B%E4%BB%93%E5%BA%93%E7%8A%B6%E6%80%81"><span class="toc-text">（2）查看仓库状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-text">（3）添加到暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-text">（4）提交到本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">（5）关联远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%886%EF%BC%89%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">（6）推送到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%887%EF%BC%89%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="toc-text">（7）克隆仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%888%EF%BC%89%E6%8B%89%E5%8F%96%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">（8）拉取最新代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%889%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="toc-text">（9）查看分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8810%EF%BC%89%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-text">（10）创建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8811%EF%BC%89%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-text">（11）切换分支（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8812%EF%BC%89%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%88%E6%97%A7%E5%91%BD%E4%BB%A4%EF%BC%89"><span class="toc-text">（12）切换分支（旧命令）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8813%EF%BC%89%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-text">（13）合并分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%8814%EF%BC%89%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">（14）查看提交记录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Git-%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">6. Git 基本工作流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">7. 实际开发中遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%86%B2%E7%AA%81%EF%BC%88Merge-Conflict%EF%BC%89"><span class="toc-text">版本冲突（Merge Conflict）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Git-%E5%88%86%E6%94%AF%EF%BC%88Branch%EF%BC%89"><span class="toc-text">8. Git 分支（Branch）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-2-Qt-%E5%AD%A6%E4%B9%A0"><span class="toc-text">2.2 Qt 学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Qt-%E4%BB%8B%E7%BB%8D"><span class="toc-text">1. Qt 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">2. 操作系统相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%EF%BC%88Process%EF%BC%89"><span class="toc-text">进程（Process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89"><span class="toc-text">线程（Thread）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">多线程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Qt-%E7%89%88%E6%9C%AC"><span class="toc-text">3. Qt 版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Qt-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">4. Qt 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Qt-%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-text">5. Qt 项目开发流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E6%80%BB%E7%BB%93"><span class="toc-text">今日总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%A4%A9"><span class="toc-text">第三天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Qt%E5%9F%BA%E7%A1%80"><span class="toc-text">Qt基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-text">源文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Qt%E5%AF%B9%E8%B1%A1%E6%A0%91"><span class="toc-text">Qt对象树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%A4%A9"><span class="toc-text">第四天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">4.1定时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-text">4.2文件读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="toc-text">4.3网络编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%A4%A9"><span class="toc-text">第五天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%B6%E4%BD%9C"><span class="toc-text">项目制作</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </aside>
+  
+</div></main>
     <footer class="footer">
-  <p>© 2026 Agbr47 · Powered by
-    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> · sakura 主题
+  <p class="footer-line">
+    © 2026 Agbr47 · <span class="footer-accent">sakura</span>
+  </p>
+  <p class="footer-line footer-dim">
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
   </p>
 </footer>
-
   </div>
-  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
-  <script src="/js/main.js"></script>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">↑</button>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片查看器">
+  <div class="lb-backdrop"></div>
+
+  <button class="lb-btn lb-close" type="button" aria-label="关闭 (Esc)">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一张 (←)">‹</button>
+
+  <figure class="lb-stage">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+
+  <button class="lb-btn lb-next" type="button" aria-label="下一张 (→)">›</button>
+  <div class="lb-counter" aria-hidden="true"></div>
+</div>
+  <script src="/js/main.js" defer></script>
+  
+    <script src="/js/petals.js" defer></script>
+  
 </body>
 </html>

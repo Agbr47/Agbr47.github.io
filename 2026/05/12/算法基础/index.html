@@ -1,49 +1,140 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e14">
 <title>算法基础 · Agbr47&#39;s Blog</title>
 <meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="author" content="Agbr47">
 <meta name="generator" content="Hexo">
+
+<meta name="keywords" content="算法,C++,Linux">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法基础 · Agbr47&#39;s Blog">
+<meta property="og:description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta property="og:site_name" content="Agbr47&#39;s Blog">
+<meta property="og:url" content="https://agbr47.github.io/2026/05/12/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/">
+
+<meta property="og:image" content="https://agbr47.github.io/4cc6b0d5bf352ddd16b33af18d3484e7.jpeg">
+
+
 
 <link rel="stylesheet" href="/css/style.css">
 
 
+<style>
+  :root {
+    --container-w: 1200px;
+    --toc-w: 250px;
+  }
+</style>
+<script>
+  // 这段必须在首屏渲染前跑，否则会看到「完整内容 → 重播动画」的闪烁
+  (function () {
+    var root = document.documentElement;
+    var theme = 'dark';
+
+    try {
+      theme =
+        localStorage.getItem('sakura-theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'light'
+          : 'dark');
+    } catch (e) {
+      /* localStorage 不可用时默认深色 */
+    }
+    root.setAttribute('data-theme', theme);
+
+    // 只有「配置开了动效」且「系统没要求减少动态效果」时才挂 has-motion。
+    // 所有入场动画都写在 .has-motion 下面，所以脚本一旦失效，内容照样完整可见。
+    var reduce =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && true) root.classList.add('has-motion');
+  })();
+</script>
+<script>
+  window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
+</script>
 </head>
-<body>
-  <div class="container">
-    <header class="header">
-  <a class="site-title" href="/">Agbr47&#39;s Blog</a>
-  <nav class="nav">
-    
-      <a class="nav-link" href="/">首页</a>
-    
-      <a class="nav-link" href="/archives/">归档</a>
-    
-      <a class="nav-link" href="/tags/">标签</a>
-    
-      <a class="nav-link" href="/categories/">分类</a>
-    
-      <a class="nav-link" href="/about/">关于</a>
-    
-  </nav>
-  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+<body class="site is-post">
+  <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
+  
+    <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+  
+
+  
+    <div class="progress" id="progress-bar" aria-hidden="true"></div>
+  
+
+  <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      
+        <span class="brand-mark" aria-hidden="true">✿</span>
+      
+      <span class="brand-text">
+        <span class="brand-title">Agbr47&#39;s Blog</span>
+        <span class="brand-sub">sakura</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+        <a class="nav-link" href="/">首页</a>
+      
+        <a class="nav-link" href="/photos/">相册</a>
+      
+        <a class="nav-link" href="/archives/">归档</a>
+      
+        <a class="nav-link" href="/tags/">标签</a>
+      
+        <a class="nav-link" href="/categories/">分类</a>
+      
+        <a class="nav-link" href="/about/">关于</a>
+      
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色主题">🌙</button>
+  </div>
 </header>
 
-    <main class="main">
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">算法基础</h1>
-    <div class="post-meta">
-      <time datetime="2026-05-12T11:12:57.000Z">2026-05-12</time>
+  <div class="container page">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <main class="main" id="main">
+<div class="post-layout has-toc">
+  <article class="post">
+    
+      <div class="post-cover"><img src="/4cc6b0d5bf352ddd16b33af18d3484e7.jpeg" alt="" decoding="async"></div>
+    
+
+    <header class="post-header">
+      <h1 class="post-title">算法基础</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-05-12T11:12:57.000Z">2026-05-12</time>
+        
+          <span class="meta-sep">·</span><span>更新于 2026-08-09</span>
+        
+        
+          <span class="meta-sep">·</span><span>约 5 分钟</span>
+        
+      </div>
+
       
-        <span class="post-updated">· 更新于 2026-08-09</span>
-      
-      
-    </div>
-  </header>
-  <div class="post-content"><p>我操了，怎么这么多</p>
+    </header>
+
+    
+      <details class="toc-inline">
+        <summary>文章目录</summary>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STL%E5%AE%B9%E5%99%A8%E2%80%93%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%EF%BC%88%E7%AE%97%E6%B3%95%EF%BC%8C%E5%AE%B9%E5%99%A8%EF%BC%8C%E4%BB%BF%E5%87%BD%E6%95%B0%EF%BC%8C%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%89"><span class="toc-text">STL容器–标准模板库（算法，容器，仿函数，迭代器）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-0-%E5%90%91%E9%87%8Fvector"><span class="toc-text">1.0 向量vector</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%9E%84%E9%80%A0"><span class="toc-text">1.1 构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%B0%BE%E6%8E%A5-%E5%B0%BE%E5%88%A0"><span class="toc-text">1.2 尾接&amp;&amp;尾删</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">1.3 适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">1.4 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-0-%E6%A0%88-%E5%85%88%E8%BF%9B%E5%90%8E%E5%87%BA"><span class="toc-text">2.0 栈 (先进后出)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">2.1 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">2.2 适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">2.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-0-%E9%98%9F%E5%88%97queue-%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA"><span class="toc-text">3.0 队列queue(先进先出)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">3.1常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">3.2 适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">3.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-0-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97priority-queue-%E5%A0%86"><span class="toc-text">4.0 优先队列priority_queue(堆)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">4.1 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-text">4.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">4.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-0-%E9%9B%86%E5%90%88set"><span class="toc-text">5.0 集合set</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">5.1 常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string"><span class="toc-text">string</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5"><span class="toc-text">字符串输入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getline"><span class="toc-text">getline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-text">size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88iterator%EF%BC%89"><span class="toc-text">迭代器（iterator）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push-back"><span class="toc-text">push_back()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop-back"><span class="toc-text">pop_back()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84-%E5%92%8C-%E8%BF%90%E7%AE%97"><span class="toc-text">字符串的+&#x3D;和+运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#insert"><span class="toc-text">insert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#substr"><span class="toc-text">substr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-text">string的关系运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8Cstring%E7%9B%B8%E5%85%B3%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">和string相关的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%97%B6%E7%9A%84%E7%89%B9%E6%AE%8A%E6%8A%80%E5%B7%A7"><span class="toc-text">输入时的特殊技巧</span></a></li></ol></li></ol></li></ol>
+      </details>
+    
+
+    <div class="post-content"><p>我操了，怎么这么多</p>
 <h1 id="STL容器–标准模板库（算法，容器，仿函数，迭代器）"><a href="#STL容器–标准模板库（算法，容器，仿函数，迭代器）" class="headerlink" title="STL容器–标准模板库（算法，容器，仿函数，迭代器）"></a>STL容器–标准模板库（算法，容器，仿函数，迭代器）</h1><h2 id="1-0-向量vector"><a href="#1-0-向量vector" class="headerlink" title="1.0 向量vector"></a>1.0 向量vector</h2><h3 id="1-1-构造"><a href="#1-1-构造" class="headerlink" title="1.1 构造"></a>1.1 构造</h3><p>vector&lt;数据类型&gt;vec;</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">    vector&lt;<span class="type">double</span>&gt;vec2;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(<span class="number">5</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">6</span>,<span class="number">10</span>)); <span class="comment">//初始化一个5行6列的二维数组，初始值为10</span></span><br><span class="line">    vector&lt;vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&gt;<span class="built_in">dp1</span>(<span class="number">5</span>,vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;(<span class="number">6</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">7</span>,<span class="number">10</span>))); <span class="comment">//初始化一个5行6列7层的三维数组，初始值为10</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec3[<span class="number">100</span>]; <span class="comment">//定义一个长度为100的vector数组，每个元素都是一个vector&lt;int&gt;   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-尾接-尾删"><a href="#1-2-尾接-尾删" class="headerlink" title="1.2 尾接&amp;&amp;尾删"></a>1.2 尾接&amp;&amp;尾删</h3><p>尾部增加一个大小为m的数值</p>
@@ -347,25 +438,61 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line"><span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">getline</span>(cin,s);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">char</span> e: s)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isdigit</span>(e))&#123;</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;cnt&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line"><span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(cin&gt;&gt;s)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">char</span> e:s)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isdigit</span>(e))&#123;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;cnt&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
 <h4 id="数字的特殊处理"><a href="#数字的特殊处理" class="headerlink" title="数字的特殊处理"></a>数字的特殊处理</h4></div>
-  <nav class="post-nav">
-    
-      <a class="post-nav-link prev" href="/2026/05/12/%E6%8E%92%E5%BA%8F/">← 排序</a>
-    
-    
-      <a class="post-nav-link next" href="/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/">2026年5月12日 →</a>
-    
-  </nav>
-</article>
 
-    </main>
+    <nav class="post-nav" aria-label="上下篇">
+      
+        <a class="post-nav-link" href="/2026/05/12/%E6%8E%92%E5%BA%8F/">
+          <span class="post-nav-label">← 上一篇</span>
+          <span class="post-nav-title">排序</span>
+        </a>
+      
+
+      
+        <a class="post-nav-link is-next" href="/2026/05/12/%E7%AC%AC%E4%B8%80%E5%A4%A9/">
+          <span class="post-nav-label">下一篇 →</span>
+          <span class="post-nav-title">2026年5月12日</span>
+        </a>
+      
+    </nav>
+  </article>
+
+  
+    <aside class="toc-aside" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-heading">目录</p>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STL%E5%AE%B9%E5%99%A8%E2%80%93%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%EF%BC%88%E7%AE%97%E6%B3%95%EF%BC%8C%E5%AE%B9%E5%99%A8%EF%BC%8C%E4%BB%BF%E5%87%BD%E6%95%B0%EF%BC%8C%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%89"><span class="toc-text">STL容器–标准模板库（算法，容器，仿函数，迭代器）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-0-%E5%90%91%E9%87%8Fvector"><span class="toc-text">1.0 向量vector</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%9E%84%E9%80%A0"><span class="toc-text">1.1 构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%B0%BE%E6%8E%A5-%E5%B0%BE%E5%88%A0"><span class="toc-text">1.2 尾接&amp;&amp;尾删</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">1.3 适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">1.4 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-0-%E6%A0%88-%E5%85%88%E8%BF%9B%E5%90%8E%E5%87%BA"><span class="toc-text">2.0 栈 (先进后出)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">2.1 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">2.2 适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">2.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-0-%E9%98%9F%E5%88%97queue-%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA"><span class="toc-text">3.0 队列queue(先进先出)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">3.1常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">3.2 适用情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">3.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-0-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97priority-queue-%E5%A0%86"><span class="toc-text">4.0 优先队列priority_queue(堆)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">4.1 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E9%80%82%E7%94%A8%E6%83%85%E5%BD%A2"><span class="toc-text">4.2 适用情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">4.3 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-0-%E9%9B%86%E5%90%88set"><span class="toc-text">5.0 集合set</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">5.1 常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string"><span class="toc-text">string</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5"><span class="toc-text">字符串输入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getline"><span class="toc-text">getline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-text">size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88iterator%EF%BC%89"><span class="toc-text">迭代器（iterator）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push-back"><span class="toc-text">push_back()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop-back"><span class="toc-text">pop_back()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84-%E5%92%8C-%E8%BF%90%E7%AE%97"><span class="toc-text">字符串的+&#x3D;和+运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#insert"><span class="toc-text">insert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#substr"><span class="toc-text">substr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-text">string的关系运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8Cstring%E7%9B%B8%E5%85%B3%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">和string相关的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%97%B6%E7%9A%84%E7%89%B9%E6%AE%8A%E6%8A%80%E5%B7%A7"><span class="toc-text">输入时的特殊技巧</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </aside>
+  
+</div></main>
     <footer class="footer">
-  <p>© 2026 Agbr47 · Powered by
-    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> · sakura 主题
+  <p class="footer-line">
+    © 2026 Agbr47 · <span class="footer-accent">sakura</span>
+  </p>
+  <p class="footer-line footer-dim">
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
   </p>
 </footer>
-
   </div>
-  <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
-  <script src="/js/main.js"></script>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">↑</button>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片查看器">
+  <div class="lb-backdrop"></div>
+
+  <button class="lb-btn lb-close" type="button" aria-label="关闭 (Esc)">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一张 (←)">‹</button>
+
+  <figure class="lb-stage">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+
+  <button class="lb-btn lb-next" type="button" aria-label="下一张 (→)">›</button>
+  <div class="lb-counter" aria-hidden="true"></div>
+</div>
+  <script src="/js/main.js" defer></script>
+  
+    <script src="/js/petals.js" defer></script>
+  
 </body>
 </html>
