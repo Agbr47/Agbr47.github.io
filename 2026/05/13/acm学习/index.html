@@ -57,6 +57,7 @@
 <script>
   window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
 </script>
+
 </head>
 <body class="site is-post">
   <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
@@ -113,7 +114,8 @@
       <div class="post-meta">
         <time datetime="2026-05-13T10:10:06.000Z">2026-05-13</time>
         
-          <span class="meta-sep">·</span><span>更新于 2026-10-19</span>
+          <span class="meta-sep">·</span>
+          <span title="最后编辑时间">更新于 2026-10-19 20:11</span>
         
         
           <span class="meta-sep">·</span><span>约 4 分钟</span>
@@ -138,24 +140,24 @@
       </details>
     
 
-    <div class="post-content"><h1 id="P1035-NOI2002-普及组-级数求和"><a href="#P1035-NOI2002-普及组-级数求和" class="headerlink" title="P1035 [NOI2002 普及组] 级数求和"></a>P1035 [NOI2002 普及组] 级数求和</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知：$S_n&#x3D; 1+\dfrac{1}{2}+\dfrac{1}{3}+…+\dfrac{1}{n}$。显然对于任意一个整数 $k$，当 $n$ 足够大的时候，$S_n&gt;k$。</p>
-<p>现给出一个整数 $k$，要求计算出一个最小的 $n$，使得 $S_n&gt;k$。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一个正整数 $k$。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个正整数 $n$。</p>
+    <div class="post-content"><h1 id="P1035-NOI2002-普及组-级数求和"><a href="#P1035-NOI2002-普及组-级数求和" class="headerlink" title="P1035 [NOI2002 普及组] 级数求和"></a>P1035 [NOI2002 普及组] 级数求和</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知：<span class="math-inline">$S_n= 1+\dfrac{1}{2}+\dfrac{1}{3}+…+\dfrac{1}{n}$</span>。显然对于任意一个整数 <span class="math-inline">$k$</span>，当 <span class="math-inline">$n$</span> 足够大的时候，<span class="math-inline">$S_n&gt;k$</span>。</p>
+<p>现给出一个整数 <span class="math-inline">$k$</span>，要求计算出一个最小的 <span class="math-inline">$n$</span>，使得 <span class="math-inline">$S_n&gt;k$</span>。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一个正整数 <span class="math-inline">$k$</span>。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个正整数 <span class="math-inline">$n$</span>。</p>
 <h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p><strong>【数据范围】</strong></p>
-<p>对于 $100%$ 的数据，$1\le k \le 15$。</p>
+<p>对于 <span class="math-inline">$100\%$</span> 的数据，<span class="math-inline">$1\le k \le 15$</span>。</p>
 <p><strong>【题目来源】</strong></p>
 <p>NOIP 2002 普及组第一题</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">S</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="type">double</span> sum=<span class="number">0.0</span>;</span><br><span class="line">	ll n=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(sum&lt;=k)&#123;</span><br><span class="line">        n++;</span><br><span class="line">		sum+=<span class="number">1.0</span>/n;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> k=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;k;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">S</span>(k)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em><strong>n++需要注意程序运行顺序</strong></em></p>
-<h1 id="P1047-NOIP-2005-普及组-校门外的树"><a href="#P1047-NOIP-2005-普及组-校门外的树" class="headerlink" title="P1047 [NOIP 2005 普及组] 校门外的树"></a>P1047 [NOIP 2005 普及组] 校门外的树</h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>某校大门外长度为 $l$ 的马路上有一排树，每两棵相邻的树之间的间隔都是 $1$ 米。我们可以把马路看成一个数轴，马路的一端在数轴 $0$ 的位置，另一端在 $l$ 的位置；数轴上的每个整数点，即 $0,1,2,\dots,l$，都种有一棵树。</p>
+<h1 id="P1047-NOIP-2005-普及组-校门外的树"><a href="#P1047-NOIP-2005-普及组-校门外的树" class="headerlink" title="P1047 [NOIP 2005 普及组] 校门外的树"></a>P1047 [NOIP 2005 普及组] 校门外的树</h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>某校大门外长度为 <span class="math-inline">$l$</span> 的马路上有一排树，每两棵相邻的树之间的间隔都是 <span class="math-inline">$1$</span> 米。我们可以把马路看成一个数轴，马路的一端在数轴 <span class="math-inline">$0$</span> 的位置，另一端在 <span class="math-inline">$l$</span> 的位置；数轴上的每个整数点，即 <span class="math-inline">$0,1,2,\dots,l$</span>，都种有一棵树。</p>
 <p>由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。</p>
-<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行有两个整数，分别表示马路的长度 $l$ 和区域的数目 $m$。</p>
-<p>接下来 $m$ 行，每行两个整数 $u, v$，表示一个区域的起始点和终止点的坐标。</p>
+<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行有两个整数，分别表示马路的长度 <span class="math-inline">$l$</span> 和区域的数目 <span class="math-inline">$m$</span>。</p>
+<p>接下来 <span class="math-inline">$m$</span> 行，每行两个整数 <span class="math-inline">$u, v$</span>，表示一个区域的起始点和终止点的坐标。</p>
 <h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个整数，表示将这些树都移走后，马路上剩余的树木数量。</p>
 <h2 id="输入输出样例-1-1"><a href="#输入输出样例-1-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1-1"><a href="#输入-1-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">500 3</span><br><span class="line">150 300</span><br><span class="line">100 200</span><br><span class="line">470 471</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -163,8 +165,8 @@
 
 <h2 id="说明-提示-1"><a href="#说明-提示-1" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p><strong>【数据范围】</strong></p>
 <ul>
-<li>对于 $20%$ 的数据，保证区域之间没有重合的部分。</li>
-<li>对于 $100%$ 的数据，保证 $1 \leq l \leq 10^4$，$1 \leq m \leq 100$，$0 \leq u \leq v \leq l$。</li>
+<li>对于 <span class="math-inline">$20\%$</span> 的数据，保证区域之间没有重合的部分。</li>
+<li>对于 <span class="math-inline">$100\%$</span> 的数据，保证 <span class="math-inline">$1 \leq l \leq 10^4$</span>，<span class="math-inline">$1 \leq m \leq 100$</span>，<span class="math-inline">$0 \leq u \leq v \leq l$</span>。</li>
 </ul>
 <h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> l, m;</span><br><span class="line">    cin &gt;&gt; l &gt;&gt; m;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 树的总数是 l+1 棵，位置从 0 到 l</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">tree</span><span class="params">(l + <span class="number">1</span>, <span class="literal">true</span>)</span></span>;  <span class="comment">// true 表示树还在</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        <span class="comment">// 将区间内的树标记为 false（已移走）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = u; j &lt;= v; ++j) &#123;</span><br><span class="line">            tree[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= l; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (tree[i]) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em><strong>错解</strong></em></p>

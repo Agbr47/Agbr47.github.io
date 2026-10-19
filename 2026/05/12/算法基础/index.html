@@ -59,6 +59,7 @@
 <script>
   window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
 </script>
+
 </head>
 <body class="site is-post">
   <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
@@ -117,7 +118,8 @@
       <div class="post-meta">
         <time datetime="2026-05-12T11:12:57.000Z">2026-05-12</time>
         
-          <span class="meta-sep">·</span><span>更新于 2026-10-19</span>
+          <span class="meta-sep">·</span>
+          <span title="最后编辑时间">更新于 2026-10-19 20:15</span>
         
         
           <span class="meta-sep">·</span><span>约 5 分钟</span>
@@ -167,7 +169,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="built_in">empty</span>();</span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; arr;</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :arr)</span><br><span class="line">        cout&lt;&lt;ele&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;arr.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">pop_back</span>();</span><br><span class="line">    arr.<span class="built_in">pop_back</span>();</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">    arr.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;ele :arr)</span><br><span class="line">        cout&lt;&lt;ele&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">clear</span>();</span><br><span class="line">    cout&lt;&lt;arr.<span class="built_in">size</span>()&lt;&lt;arr.<span class="built_in">empty</span>()<span class="comment">/*bool*/</span>&lt;&lt;endl;</span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">5</span>);<span class="comment">//将长度增长到5，新增元素默认值为0</span></span><br><span class="line">    arr.<span class="built_in">clear</span>();</span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">5</span>,<span class="number">1</span>);<span class="comment">//将长度增长到5，新增元素默认值为1</span></span><br><span class="line">    arr.<span class="built_in">resize</span>(<span class="number">3</span>);<span class="comment">//将长度缩小到3，后面元素被删除</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="1-3-适用情况"><a href="#1-3-适用情况" class="headerlink" title="1.3 适用情况"></a>1.3 适用情况</h3><p>vector<strong>一般</strong>可以直接替换数组</p>
-<p>有些情况普通数组无法解决：$n \times m$ 的矩阵，$1 \leq n$,$m \leq 10^6$且$n\times m\leq 10^6$</p>
+<p>有些情况普通数组无法解决：<span class="math-inline">$n \times m$</span> 的矩阵，<span class="math-inline">$1 \leq n$</span>,<span class="math-inline">$m \leq 10^6$</span>且<span class="math-inline">$n\times m\leq 10^6$</span></p>
 <ul>
 <li><p>如果用普通数组 int m[1000010][1000010],浪费内存，会导致MLE <em><strong>（我不知道）</strong></em></p>
 </li>

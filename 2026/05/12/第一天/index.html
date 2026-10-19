@@ -59,6 +59,7 @@
 <script>
   window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
 </script>
+
 </head>
 <body class="site is-post">
   <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
@@ -117,7 +118,8 @@
       <div class="post-meta">
         <time datetime="2026-05-12T10:26:41.000Z">2026-05-12</time>
         
-          <span class="meta-sep">·</span><span>更新于 2026-05-12</span>
+          <span class="meta-sep">·</span>
+          <span title="最后编辑时间">更新于 2026-05-12 19:11</span>
         
         
           <span class="meta-sep">·</span><span>约 1 分钟</span>
@@ -159,17 +161,17 @@ byd缩放示例变形了
 <h1 id="P1002过河卒"><a href="#P1002过河卒" class="headerlink" title="P1002过河卒"></a>P1002过河卒</h1><pre><code>好像现在做不了，只能先学算法了
 # P1002 [NOIP 2002 普及组] 过河卒
 </code></pre>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>棋盘上 $A$ 点有一个过河卒，需要走到目标 $B$ 点。卒行走的规则：可以向下、或者向右。同时在棋盘上 $C$ 点有一个对方的马，该马所在的点和所有跳跃一步可达的点称为对方马的控制点。因此称之为“马拦过河卒”。</p>
-<p>棋盘用坐标表示，$A$ 点 $(0, 0)$、$B$ 点 $(n, m)$，同样马的位置坐标是需要给出的。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>棋盘上 <span class="math-inline">$A$</span> 点有一个过河卒，需要走到目标 <span class="math-inline">$B$</span> 点。卒行走的规则：可以向下、或者向右。同时在棋盘上 <span class="math-inline">$C$</span> 点有一个对方的马，该马所在的点和所有跳跃一步可达的点称为对方马的控制点。因此称之为“马拦过河卒”。</p>
+<p>棋盘用坐标表示，<span class="math-inline">$A$</span> 点 <span class="math-inline">$(0, 0)$</span>、<span class="math-inline">$B$</span> 点 <span class="math-inline">$(n, m)$</span>，同样马的位置坐标是需要给出的。</p>
 <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ipmwl52i.png"></p>
-<p>现在要求你计算出卒从 $A$ 点能够到达 $B$ 点的路径的条数，假设马的位置是固定不动的，并不是卒走一步马走一步。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一行四个正整数，分别表示 $B$ 点坐标和马的坐标。</p>
+<p>现在要求你计算出卒从 <span class="math-inline">$A$</span> 点能够到达 <span class="math-inline">$B$</span> 点的路径的条数，假设马的位置是固定不动的，并不是卒走一步马走一步。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一行四个正整数，分别表示 <span class="math-inline">$B$</span> 点坐标和马的坐标。</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，表示所有的路径条数。</p>
 <h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6 6 3 3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p>对于 $100 %$ 的数据，$1 \le n, m \le 20$，$0 \le$ 马的坐标 $\le 20$。</p>
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p>对于 <span class="math-inline">$100 \%$</span> 的数据，<span class="math-inline">$1 \le n, m \le 20$</span>，<span class="math-inline">$0 \le$</span> 马的坐标 <span class="math-inline">$\le 20$</span>。</p>
 <p>保证起点不是马的控制点。</p>
 <p><strong>【题目来源】</strong></p>
 <p>NOIP 2002 普及组第四题</p>

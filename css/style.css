@@ -2405,6 +2405,7 @@ pre:hover .copy-btn,
   }
 }
 
+
 /* --- 系统要求减少动态效果时，一律停掉 --- */
 @media (prefers-reduced-motion: reduce) {
   .has-motion .hero.has-intro > *,
@@ -2424,4 +2425,169 @@ pre:hover .copy-btn,
     animation: none !important;
     background-image: none;
   }
+}
+.post-content figure.highlight table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.post-content figure.highlight .gutter {
+  width: 3.4em;
+}
+
+.post-content figure.highlight .code pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+/* ==========================================================================
+   侧边目录：按标题逐级折叠
+   每个「有子目录」的条目右侧有一个小箭头，各折各的
+   ========================================================================== */
+.toc-item {
+  position: relative;
+}
+
+.toc-item > .toc-link {
+  padding-right: 28px;
+}
+
+.toc-caret {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* 箭头用两条边框拼出来，比字符渲染更锐利，也能跟着按钮缩放 */
+.toc-caret::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.22s ease;
+}
+
+.toc-item.is-collapsed > .toc-caret::before {
+  transform: rotate(-45deg);
+}
+
+.toc-item:hover > .toc-caret,
+.toc-caret:hover,
+.toc-caret:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.toc-item.is-collapsed > .toc-child {
+  display: none;
+}
+/* ==========================================================================
+   标签页词云
+   ========================================================================== */
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 26px 8px 16px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.word-cloud a {
+  padding: 4px 9px;
+  border-radius: 10px;
+  color: var(--text-dim);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+
+.word-cloud a:hover {
+  color: var(--accent);
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.word-cloud .cloud-count {
+  margin-left: 3px;
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 0.5em;
+  font-weight: 400;
+  vertical-align: super;
+  opacity: 0.55;
+}
+
+/* ==========================================================================
+   滚动条：跟随主题配色
+   默认滚动条是系统灰白色，在深色粉调界面里很突兀，这里统一成主题色
+   ========================================================================== */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --scrollbar-thumb: rgba(255, 146, 194, 0.34);
+  --scrollbar-thumb-hover: rgba(255, 146, 194, 0.68);
+  --scrollbar-track: rgba(255, 217, 234, 0.05);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --scrollbar-thumb: rgba(226, 88, 143, 0.36);
+  --scrollbar-thumb-hover: rgba(226, 88, 143, 0.72);
+  --scrollbar-track: rgba(58, 43, 51, 0.06);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Chromium / Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-color: var(--scrollbar-thumb);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* 代码块、表格这些局部横向滚动条细一点，别抢视线 */
+.post-content pre::-webkit-scrollbar,
+.post-content figure.highlight .code pre::-webkit-scrollbar,
+.table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.toc-box::-webkit-scrollbar {
+  width: 8px;
 }

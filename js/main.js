@@ -604,6 +604,99 @@ var stage = box.querySelector('.lb-stage');
     });
   }
 
+  /* ------------------ 目录：按标题逐级折叠 ------------------ */
+  function initTocTree() {
+    var tocs = doc.querySelectorAll('.toc');
+    if (!tocs.length) return;
+
+    var KEY = 'sakura-toc-collapsed';
+    var collapsed = {};
+
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+      if (Array.isArray(saved)) {
+        saved.forEach(function (k) {
+          collapsed[k] = true;
+        });
+      }
+    } catch (e) {
+      collapsed = {};
+    }
+
+    function save() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(Object.keys(collapsed)));
+      } catch (e) {
+        /* localStorage 不可用就只是不记忆 */
+      }
+    }
+
+    /** 设置某个标题的折叠状态；窄屏折叠目录和宽屏侧栏两处一起同步 */
+    function setKey(key, on) {
+      if (on) collapsed[key] = true;
+      else delete collapsed[key];
+
+      Array.prototype.forEach.call(doc.querySelectorAll('.toc-caret'), function (caret) {
+        if (caret.getAttribute('data-toc-key') !== key) return;
+        var item = caret.parentNode;
+        item.classList.toggle('is-collapsed', on);
+        caret.setAttribute('aria-expanded', on ? 'false' : 'true');
+        caret.setAttribute('aria-label', on ? '展开该节' : '折叠该节');
+        /* 箭头由 CSS 的 ::before 绘制，这里只负责状态 */
+      });
+    }
+
+    // 1. 给「有子目录」的条目插入折叠箭头
+    Array.prototype.forEach.call(tocs, function (toc) {
+      Array.prototype.forEach.call(toc.querySelectorAll('li.toc-item'), function (item) {
+        var child = null;
+        var link = null;
+
+        Array.prototype.forEach.call(item.children, function (el) {
+          if (el.classList && el.classList.contains('toc-child')) child = el;
+          if (el.tagName === 'A' && el.classList.contains('toc-link')) link = el;
+        });
+
+        if (!child || !link) return;
+
+        var caret = doc.createElement('button');
+        caret.type = 'button';
+        caret.className = 'toc-caret';
+        caret.setAttribute('data-toc-key', link.getAttribute('href') || '');
+        // 先给个默认展开态，后面 setKey 只会覆盖被折叠的那些；
+        // 不写这两行的话，默认展开的条目对读屏软件就是「没有状态」
+        caret.setAttribute('aria-expanded', 'true');
+        caret.setAttribute('aria-label', '折叠该节');
+        item.insertBefore(caret, child);
+      });
+    });
+
+    // 2. 清掉文章结构变了之后已经不存在的标题
+    var valid = {};
+    Array.prototype.forEach.call(doc.querySelectorAll('.toc-caret'), function (caret) {
+      valid[caret.getAttribute('data-toc-key')] = true;
+    });
+    Object.keys(collapsed).forEach(function (key) {
+      if (!valid[key]) delete collapsed[key];
+    });
+
+    // 3. 套用上次的状态
+    Object.keys(collapsed).forEach(function (key) {
+      setKey(key, true);
+    });
+    save();
+
+    // 4. 绑定点击
+    Array.prototype.forEach.call(doc.querySelectorAll('.toc-caret'), function (caret) {
+      caret.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var item = caret.parentNode;
+        setKey(caret.getAttribute('data-toc-key'), !item.classList.contains('is-collapsed'));
+        save();
+      });
+    });
+  }
   /* ------------------------------ 启动 ------------------------------ */
   function boot() {
     initTheme();
@@ -616,6 +709,7 @@ var stage = box.querySelector('.lb-stage');
     initTables();
     initLightbox();
     initTocSpy();
+    initTocTree();
     initCodeCopy();
     initSpotlight();
     initReveal();
