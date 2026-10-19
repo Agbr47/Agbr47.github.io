@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e14">
+<title>牛客周赛 Round 166 · Agbr47&#39;s Blog</title>
+<meta name="description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta name="author" content="Agbr47">
+<meta name="generator" content="Hexo">
+
+<meta name="keywords" content="算法,C++,Linux">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客周赛 Round 166 · Agbr47&#39;s Blog">
+<meta property="og:description" content="编程学习与折腾记录：算法、C++、Linux 与一切有趣的事">
+<meta property="og:site_name" content="Agbr47&#39;s Blog">
+<meta property="og:url" content="https://agbr47.github.io/2026/10/18/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B-Round-166/">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<style>
+  :root {
+    --container-w: 1200px;
+    --toc-w: 250px;
+  }
+</style>
+<script>
+  // 这段必须在首屏渲染前跑，否则会看到「完整内容 → 重播动画」的闪烁
+  (function () {
+    var root = document.documentElement;
+    var theme = 'dark';
+
+    try {
+      theme =
+        localStorage.getItem('sakura-theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'light'
+          : 'dark');
+    } catch (e) {
+      /* localStorage 不可用时默认深色 */
+    }
+    root.setAttribute('data-theme', theme);
+
+    // 只有「配置开了动效」且「系统没要求减少动态效果」时才挂 has-motion。
+    // 所有入场动画都写在 .has-motion 下面，所以脚本一旦失效，内容照样完整可见。
+    var reduce =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && true) root.classList.add('has-motion');
+  })();
+</script>
+<script>
+  window.SAKURA_MOTION = {"petals":true,"hero_intro":true,"reveal":true,"spotlight":true,"image_fade":true,"lightbox_zoom":true,"page_fade":true};
+</script>
+</head>
+<body class="site is-post">
+  <div class="bg-orbs" aria-hidden="true"><i></i><i></i></div>
+  
+    <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+  
+
+  
+    <div class="progress" id="progress-bar" aria-hidden="true"></div>
+  
+
+  <header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      
+        <span class="brand-mark" aria-hidden="true">✿</span>
+      
+      <span class="brand-text">
+        <span class="brand-title">Agbr47&#39;s Blog</span>
+        <span class="brand-sub">sakura</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+        <a class="nav-link" href="/">首页</a>
+      
+        <a class="nav-link" href="/photos/">相册</a>
+      
+        <a class="nav-link" href="/archives/">归档</a>
+      
+        <a class="nav-link" href="/tags/">标签</a>
+      
+        <a class="nav-link" href="/categories/">分类</a>
+      
+        <a class="nav-link" href="/about/">关于</a>
+      
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色主题">🌙</button>
+  </div>
+</header>
+
+  <div class="container page">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <main class="main" id="main">
+<div class="post-layout">
+  <article class="post">
+    
+
+    <header class="post-header">
+      <h1 class="post-title">牛客周赛 Round 166</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-10-18T14:47:30.000Z">2026-10-18</time>
+        
+          <span class="meta-sep">·</span><span>更新于 2026-10-19</span>
+        
+        
+          <span class="meta-sep">·</span><span>约 1 分钟</span>
+        
+      </div>
+
+      
+        <div class="post-tags">
+          
+            <a class="tag" href="/tags/acm/">#acm</a>
+          
+        </div>
+      
+    </header>
+
+    
+
+    <div class="post-content"></div>
+
+    <nav class="post-nav" aria-label="上下篇">
+      <span class="post-nav-empty"></span>
+
+      
+        <a class="post-nav-link is-next" href="/2026/10/18/2026%E5%B9%B4%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%9C%88%E8%B5%9B%EF%BC%88%E5%90%8C%E6%AD%A5%E8%B5%9B%EF%BC%89/">
+          <span class="post-nav-label">下一篇 →</span>
+          <span class="post-nav-title">2026年广东工业大学月赛（同步赛）</span>
+        </a>
+      
+    </nav>
+  </article>
+
+  
+</div></main>
+    <footer class="footer">
+  <p class="footer-line">
+    © 2026 Agbr47 · <span class="footer-accent">sakura</span>
+  </p>
+  <p class="footer-line footer-dim">
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+  </p>
+</footer>
+  </div>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">↑</button>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片查看器">
+  <div class="lb-backdrop"></div>
+
+  <button class="lb-btn lb-close" type="button" aria-label="关闭 (Esc)">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一张 (←)">‹</button>
+
+  <figure class="lb-stage">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+
+  <button class="lb-btn lb-next" type="button" aria-label="下一张 (→)">›</button>
+  <div class="lb-counter" aria-hidden="true"></div>
+</div>
+  <script src="/js/main.js" defer></script>
+  
+    <script src="/js/petals.js" defer></script>
+  
+</body>
+</html>
